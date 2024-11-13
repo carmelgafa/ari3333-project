@@ -1,54 +1,71 @@
-// src/components/Book.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Book = () => {
-  const [pages, setPages] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  const [pageContent, setPageContent] = useState("");
+  const [endPage, setEndPage] = useState(false);
 
-  useEffect(() => {
-    const fetchPages = async () => {
-      const fetchedPages = [];
-      for (let i = 0; i < 4; i++) { // Adjust the page count as needed
-        try {
-          const response = await axios.get(`http://127.0.0.1:5000/api/page/${i}`);
-          fetchedPages.push(response.data.content);
-        } catch (error) {
-          fetchedPages.push("Error loading page");
+  useEffect(() => 
+  {
+    const fetchPage = async () =>
+    {
+      try
+      {
+        const response = await axios.get(`http://127.0.0.1:5000/api/page/${currentPage}`);
+        const pageContent = response.data.content;
+        console.log(pageContent);
+        setPageContent(pageContent);
+        if (pageContent === "The End")
+        {
+          setEndPage(true);
         }
+        else if (endPage) {
+          setEndPage(false);
+        }
+      } 
+      catch (error) 
+      {
+        console.error("Error fetching page:", error);
+        setPageContent("Error loading page"); // Display error message if fetch fails
       }
-      setPages(fetchedPages);
     };
+    fetchPage();
+  }, [currentPage]); // Trigger this effect every time currentPage changes
 
-    fetchPages();
-  }, []);
-
-  const handleNext = () => {
-    if (currentPage < pages.length - 1) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    }
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
   };
 
-  const handlePrevious = () => {
-    if (currentPage > 0) {
-      setCurrentPage((prevPage) => prevPage - 1);
-    }
+  const handlePreviousPage = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 0)); // Prevent going below 0
   };
 
   return (
     <div className="book-container">
-      <div className="page">
-        <h3>Page {currentPage + 1}</h3>
-        <p>{pages[currentPage]}</p>
+      
+      <div className="pages-container">
+        <div className="page">
+          <h3>Page {currentPage + 1}</h3>
+          <p>{pageContent}</p>
+        </div>
+        <div className="page">
+          <h3>Page {currentPage + 1}</h3>
       </div>
+    </div>
 
       <div className="navigation">
-        <button onClick={handlePrevious} disabled={currentPage === 0}>
+        <button onClick={handlePreviousPage} disabled={currentPage === 0}>
           Previous
         </button>
-        <button onClick={handleNext} disabled={currentPage >= pages.length - 1}>
-          Next
-        </button>
+        
+        {endPage ? (
+          <p></p>
+        ) : (
+          <button onClick={handleNextPage}>
+            Next
+          </button>
+        )}
       </div>
     </div>
   );

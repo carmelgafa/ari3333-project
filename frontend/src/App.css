@@ -18,25 +18,37 @@ body, html {
 /* Book container */
 .book-container {
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   align-items: center;
   background-color: #f9f9f9;
   padding: 20px;
-  width: 500px;
+  width: 1020px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
+
+.pages-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 
 /* Styling for the single page view */
 .page {
   width: 100%;
   padding: 40px 30px;
   box-sizing: border-box;
-  background-color: #ffffff;
+  background-color: #d6d0d0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
+  width: 500px;
+  height: 500px;
   text-align: center;
+  font-family: 'Times New Roman', serif;
+  overflow: hidden;
 }
+
 
 .page h3 {
   font-size: 1.6em;
