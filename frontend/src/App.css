@@ -1,10 +1,81 @@
-/* General page styling */
-body, html {
+/* General styling */
+/* General styling */
+body {
   margin: 0;
-  padding: 0;
-  font-family: 'Georgia', serif;
-  background-color: #f0f0f0;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* height: 100vh; */
+  background: #c4a484;
+  /* font-family: 'Times New Roman', serif; */
 }
+
+/* Book cover styling */
+.book-cover {
+  width: 440px;
+  height: 600px;
+  background: #c4a484; /* Aged leather color */
+  border: 6px solid #5e432b; /* Dark brown border for contrast */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Depth effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column; /* Stack elements vertically */
+  padding: 15px;
+  text-align: center;
+  color: #3c2f2f; /* Dark brown for text */
+  background: radial-gradient(circle, #c4a484, #8d6b4e 80%);
+  background-blend-mode: multiply;
+}
+
+.book-title {
+  font-family: 'Great Vibes', cursive; /* Elegant, classic font */
+  font-size: 28px;
+  color: #3c2f2f; /* Dark text for contrast */
+  text-shadow: 
+    0 2px 3px rgba(0, 0, 0, 0.6), /* Shadow effect */
+    0 0 10px rgba(255, 255, 255, 0.3); /* Soft glow */
+  padding: 10px 20px; /* Add padding to make space for the label */
+  background: #f5deb3; /* Light wheat color for label */
+  border: 2px solid #8d6b4e; /* Border to frame the label */
+  border-radius: 5px; /* Slightly rounded corners for the label */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Depth for the label */
+  display: inline-block; /* Make the label fit the content */
+  position: relative;
+}
+
+.page-options {
+  margin-top: auto; /* Pushes the button to the bottom */
+  width: 100%; /* Full width to center the button */
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  padding-bottom: 15px; /* Space between button and bottom */
+}
+
+.start-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #6a4b3c; /* Dark brown */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.start-button:hover {
+  background-color: #4f3628; /* Slightly darker brown */
+  transform: scale(1.05);
+}
+
+.start-button:active {
+  transform: scale(0.95);
+}
+
+
 
 /* Main App container */
 .App {
@@ -15,72 +86,111 @@ body, html {
   min-height: 100vh;
 }
 
-/* Book container */
-.book-container {
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  background-color: #f9f9f9;
-  padding: 20px;
-  width: 1020px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-}
 
-.pages-container {
+.book-page {
+  position: relative;
+  width: 400px; /* Adjust to match the book size */
+  height: 600px; /* Proportional to a book page */;
+  background: #f9f4e7; /* Light beige paper-like color */
+  padding: 18px;
+  font-family: 'Georgia', serif;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 
-/* Styling for the single page view */
-.page {
-  width: 100%;
-  padding: 40px 30px;
-  box-sizing: border-box;
-  background-color: #d6d0d0;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  width: 500px;
-  height: 500px;
+
+/* Styling for the book page container */
+.book-page {
+  width: 400px; /* Adjust to match the book size */
+  height: 600px; /* Proportional to a book page */
+  background: #fdf3e3; /* Light cream color for aged paper */
+  border: 1px solid #d6c1a8; /* Subtle border for the page */
+  box-shadow: 
+    inset 0 0 10px rgba(0, 0, 0, 0.2), /* Inner shadow for depth */
+    5px 5px 15px rgba(0, 0, 0, 0.5); /* Outer shadow for realism */
+  border-radius: 5px; /* Slight rounding to simulate page shape */
+  padding: 20px; /* Space for text inside the page */
+  font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Friendly font for kids */
+  margin: 20px auto; /* Center the page */
+  position: relative; /* Allows for layering additional elements */
+  background-image: 
+    radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%), /* Subtle texture */
+    url('https://www.transparenttextures.com/patterns/white-paper.png'); /* Textured paper pattern */
+  background-blend-mode: multiply; /* Enhance the texture */
+  background-size: cover;
+}
+
+/* Content within the page */
+.page-content {
+  text-align: left;
+  color: #3c2f2f; /* Dark brown for text */
+  line-height: 2; /* More space between lines for easier reading */
+  height: 520px; /* Reserve space for the page number */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* Styling for the main text */
+.page-text {
+  font-size: 24px; /* Larger font size for readability */
+  font-weight: bold; /* Bold text for better visibility */
+  text-indent: 20px; /* Slight indentation for paragraphs */
+  color: #3c2f2f;
+}
+
+/* Page number styling */
+.page-number {
+  font-size: 16px; /* Larger font size for visibility */
   text-align: center;
-  font-family: 'Times New Roman', serif;
-  overflow: hidden;
+  color: #6b4e31; /* Slightly faded brown for a vintage look */
+  /* position: absolute; */
+  bottom: 10px;
+  width: 100%;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px; /* Slight spacing for a classic look */
 }
 
+.page-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
 
-.page h3 {
-  font-size: 1.6em;
+/* Styling for the buttons */
+.option-button {
+  display: block;
+  width: 90%; /* Almost full width of the page */
+  padding: 15px 10px;
+  margin: 10px auto; /* Space between buttons */
+  text-align: center;
+  font-size: 15px;
   font-weight: bold;
-  color: #333;
-  margin: 0 0 15px;
-}
-
-.page p {
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #555;
-  margin: 0;
-}
-
-/* Navigation buttons */
-.navigation {
-  margin-top: 20px;
-}
-
-button {
-  padding: 10px 20px;
-  margin: 0 10px;
-  font-size: 1em;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+  color: #3c2f2f;
+  background: #f6e4d4; /* Light parchment color */
+  border: 2px solid #c3a789; /* Slightly darker border */
+  border-radius: 8px; /* Smooth edges */
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.7), /* Inner highlight */
+    2px 2px 5px rgba(0, 0, 0, 0.2); /* Outer shadow for depth */
   cursor: pointer;
+  transition: all 0.3s ease; /* Smooth animation for interaction */
 }
 
-button:disabled {
-  background-color: #d3d3d3;
-  cursor: not-allowed;
+/* Hover effect to make it clear buttons are interactive */
+.option-button:hover {
+  background: #e3cfb8;
+  color: #2f1f1f;
+  box-shadow: 
+    inset 0 0 5px rgba(0, 0, 0, 0.2), 
+    2px 2px 10px rgba(0, 0, 0, 0.3); /* Slightly deeper shadow */
+}
+
+/* Focus/active effect for keyboard and click interactions */
+.option-button:active {
+  background: #d6bda3;
+  box-shadow: 
+    inset 2px 2px 6px rgba(0, 0, 0, 0.3); /* Pressed effect */
 }
