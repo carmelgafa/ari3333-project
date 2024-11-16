@@ -6,38 +6,70 @@ const Book = () => {
   const [pageContent, setPageContent] = useState({});
   const [bookTitle, setBookTitle] = useState({title:""});
   const [option, setOption] = useState(0);
+  const [image_url, setImage_url] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-
-  useEffect(() => {
+useEffect(() => {
     const fetchPage = async () => {
       try {
-        
-        // Set the book title on the first page
         if (currentPage === 0) {
-          const response = await axios.get(`http://127.0.0.1:5000/api/title`);
-          setBookTitle(JSON.parse(response.data))
+          setIsLoading(true);
+  
+          const title_response = await axios.get(`http://127.0.0.1:5000/api/title`);
+          const titleData = title_response.data;
+          setBookTitle(titleData);
+          
+          console.log(titleData);
+
+          const image_response = await axios.get(
+            `http://127.0.0.1:5000/api/image/${encodeURIComponent(titleData.title)}`
+          );
+          const imageData = image_response.data;
+  
+          console.log(imageData);
+
+          const img = new Image();
+          img.src = imageData.image_url;
+          img.onload = () => {
+            setImage_url(imageData.image_url);
+            setIsLoading(false);
+          };
         }
-        else{
-          const response = await axios.get(`http://127.0.0.1:5000/api/page/${option}`);
-          setPageContent(JSON.parse(response.data));
-        }        
-      }
-      catch (error) {
-        console.error("Error fetching page:", error);
-        setPageContent({ part: "Error loading page", option1: "", option2: "" });
+        else {
+          setIsLoading(true);
+  
+          const page_response = await axios.get(
+            `http://127.0.0.1:5000/api/page/${option}`
+          );
+          const pageData = JSON.parse(page_response.data);
+          
+
+          setPageContent(pageData);
+          console.log(pageData);
+          console.log(pageContent.part);
+  
+
+          setIsLoading(false);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setIsLoading(false);
       }
     };
-
+  
     fetchPage();
-  }, [currentPage]); // Trigger this effect whenever currentPage changes
+  }, [currentPage]);
+  
 
 
   const handleRestart = () => {
+    setOption(0);
     setCurrentPage(0);
   };
 
 
   const handleStart = () => {
+    setOption(0);
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
@@ -51,12 +83,15 @@ const Book = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
-  if (currentPage === 0) {
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  else if (currentPage === 0) {
     return (
     <div>
       <div class="book-cover">
         <h1 class="book-title">{bookTitle.title}</h1>
-
+        <img src={image_url} alt="Book Cover" />
         <div className="page-options">
           <button class="start-button" onClick={handleStart}>
             Start
@@ -82,7 +117,6 @@ const Book = () => {
   }
   else{
     return (
-
         <div class="book-page">
           <div class="page-content">
             <p class="page-text">{pageContent.part}</p>

@@ -1,13 +1,6 @@
-/* General styling */
-/* General styling */
 body {
   margin: 0;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* height: 100vh; */
   background: #c4a484;
-  /* font-family: 'Times New Roman', serif; */
 }
 
 /* Book cover styling */
@@ -134,7 +127,7 @@ body {
 
 /* Styling for the main text */
 .page-text {
-  font-size: 24px; /* Larger font size for readability */
+  font-size: 20px; /* Larger font size for readability */
   font-weight: bold; /* Bold text for better visibility */
   text-indent: 20px; /* Slight indentation for paragraphs */
   color: #3c2f2f;
