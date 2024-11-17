@@ -1,8 +1,7 @@
 import openai
+import openai_secret
 
-API_KEY = """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"""
-
-openai.api_key = API_KEY
+openai.api_key = openai_secret.API_KEY
 
 class OpenAIStoryPainter:
     def __init__(self):

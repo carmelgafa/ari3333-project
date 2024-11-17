@@ -125,7 +125,7 @@ useEffect(() => {
             <button class="option-button" onClick={handleOption1}>{pageContent.option1}</button>
             <button class="option-button" onClick={handleOption2}>{pageContent.option2}</button>
           </div>
-          <div class="page-number">{currentPage}</div>
+          <div class="page-number">{currentPage} {pageContent.status}</div>
         </div>
     );
   }

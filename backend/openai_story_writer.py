@@ -1,46 +1,61 @@
 import openai
+import openai_secret
+from openai_prompts import prompt_restart_story
+from openai_prompts import prompt_story_title
+from openai_prompts import prompt_next_page
 
-API_KEY = """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"""
+openai.api_key = openai_secret.API_KEY
 
-openai.api_key = API_KEY
 
 class OpenAIStoryWriter:
     def __init__(self):
         self.restart_story()
-        self.page_number = 0
+        self.page_number=0
 
     def restart_story(self):
-        self.messages = [
-            {"role": "user", "content":
-            """You are a story writer. Write a magical, adventurous story for a 5-year-old in the style of the Grimm brothers. 
-            The story must have a lovable main character, a vivid setting, and themes of friendship and wonder. 
-            Each 'page' must be two sentences long, except the final page, which simply says 'The End.
-            The story should be about 10 pages long.'"""}
-        ]
-    
+        '''
+        Restarts the story
+        '''
+        self.messages = [{"role": "user", "content": prompt_restart_story()}]
+
     def get_story_title(self):
-        self.messages.append(
-            {"role": "user", "content": "Suggest a whimsical and engaging title for this story."}
-        )
+        '''
+        Returns the title of the story
+        '''
+
+        title_prompt = {"role": "user", "content": prompt_story_title()}
+        self.messages.append(title_prompt)
+
         chat = openai.ChatCompletion.create(
             model="gpt-3.5-turbo", messages=self.messages
         )
+
         title = chat.choices[0].message.content
         self.messages.append({"role": "assistant", "content": title})
-        self.page_number += 1
+        self.page_number+=1
         return title
 
-    def get_next_page(self, option: int):
-        self.messages.append(
-            {"role": "user", "content": 
-            f"""Continue the story based on option {option}. Keep it whimsical and age-appropriate. 
-            Provide two logical options for what happens next. If the story ends, respond with 'The End.' 
-            Format your response as a JSON object: {{'part': '', 'option1': '', 'option2': '', 'status': ''}}."""}
-        )
+    def get_next_page(self, option:int):
+        '''
+        Returns the next page of the story
+        '''
+        next_page_prompt = {"role": "user", "content": prompt_next_page(option)}
+
+        self.messages.append(next_page_prompt)
         chat = openai.ChatCompletion.create(
             model="gpt-3.5-turbo", messages=self.messages
         )
         next_page = chat.choices[0].message.content
         self.messages.append({"role": "assistant", "content": next_page})
-        self.page_number += 1
+
+        self.page_number+=1
+
         return next_page
+
+if __name__ == "__main__":
+    writer = OpenAIStoryWriter()
+
+    print("Title:", writer.get_story_title())
+
+    while writer.get_next_page(1).strip() != "The End":
+        print("Page:", writer.get_next_page(1))
