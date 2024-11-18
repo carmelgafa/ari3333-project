@@ -8,6 +8,7 @@ const Book = () => {
   const [option, setOption] = useState(0);
   const [image_url, setImage_url] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isSpeechAvailable, setIsSpeechAvailable] = useState(false);
 
 useEffect(() => {
     const fetchPage = async () => {
@@ -43,11 +44,18 @@ useEffect(() => {
           );
           const pageData = JSON.parse(page_response.data);
           
-
           setPageContent(pageData);
           console.log(pageData);
           console.log(pageContent.part);
-  
+
+          const speech_response = await axios.get(
+            `http://127.0.0.1:5000/api/speech/${pageContent.part}`
+          );          
+          const speechData = speech_response.data;
+          console.log(speechData); 
+
+          setIsSpeechAvailable(speechData.speechAvailable);
+
 
           setIsLoading(false);
         }
@@ -129,37 +137,6 @@ useEffect(() => {
         </div>
     );
   }
-
-
-
-  // return (
-
-
-
-  //   <div className="book-container">
-  //     <h1>{bookTitle.title}</h1>
-  //     <div className="page-content">
-  //       <h3>Page {currentPage}</h3>
-  //       {<p>{pageContent.part}</p> }
-
-  //       {<p>{pageContent.status}</p> }
-  //       {<p>Option 1: {pageContent.option1}</p>}
-  //       {<p>Option 2: {pageContent.option2}</p>}
-  //     </div>
-
-  //     <div className="navigation">
-  //       <button onClick={handleOption1} disabled={currentPage === 0}>
-  //         Option 1
-  //       </button>
-        
-  //       {!endPage && (
-  //         <button onClick={handleOption2}>
-  //           Option 2
-  //         </button>
-  //       )}
-  //     </div>
-  //   </div>
-  // );
 };
 
 export default Book;

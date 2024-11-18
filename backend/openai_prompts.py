@@ -52,3 +52,18 @@ def prompt_next_page(option:int):
     """
 
     return prompt
+
+
+def prompt_story_image(book_title:str):
+    '''
+    Returns the prompt for getting the image of the story
+    '''
+    prompt = (
+        """A whimsical pencil-drawn illustration
+        evoking a gentle, storybook atmosphere. The drawing style is delicate, with fine details 
+        and shading that give the scene a charming, 
+        hand-drawn quality, suitable for a children's book cover"
+        The title of the story is: """ + book_title
+    )
+
+    return prompt

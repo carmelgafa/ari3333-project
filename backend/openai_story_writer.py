@@ -8,6 +8,10 @@ openai.api_key = openai_secret.API_KEY
 
 
 class OpenAIStoryWriter:
+    '''
+    Class for generating stories
+    '''
+
     def __init__(self):
         self.restart_story()
         self.page_number=0
