@@ -38,23 +38,22 @@ useEffect(() => {
         }
         else {
           setIsLoading(true);
-  
+          
+          console.log("Page Number: ", currentPage);
+
           const page_response = await axios.get(
             `http://127.0.0.1:5000/api/page/${option}`
           );
-          const pageData = JSON.parse(page_response.data);
           
+          console.log(page_response.data);
+
+          const pageData = JSON.parse(JSON.stringify(page_response.data));
+          
+          console.log("pageData", pageData);
+
           setPageContent(pageData);
           console.log(pageData);
           console.log(pageContent.part);
-
-          const speech_response = await axios.get(
-            `http://127.0.0.1:5000/api/speech/${pageContent.part}`
-          );          
-          const speechData = speech_response.data;
-          console.log(speechData); 
-
-          setIsSpeechAvailable(speechData.speechAvailable);
 
 
           setIsLoading(false);
@@ -68,7 +67,13 @@ useEffect(() => {
     fetchPage();
   }, [currentPage]);
   
+  const playAudio = (url) => {
 
+    console.log(url);
+
+    const audio = new Audio(url); // Create an audio object with the provided URL
+    audio.play().catch((error) => console.error("Error playing audio:", error));
+  };
 
   const handleRestart = () => {
     setOption(0);
@@ -125,16 +130,23 @@ useEffect(() => {
   }
   else{
     return (
-        <div class="book-page">
-          <div class="page-content">
-            <p class="page-text">{pageContent.part}</p>
-          </div>
-          <div class="page-options">
-            <button class="option-button" onClick={handleOption1}>{pageContent.option1}</button>
-            <button class="option-button" onClick={handleOption2}>{pageContent.option2}</button>
-          </div>
-          <div class="page-number">{currentPage} {pageContent.status}</div>
-        </div>
+<div className="book-page">
+  <button 
+    className="audio-button" 
+    onClick={() => playAudio(pageContent.textURL)}
+  >
+    text
+  </button>
+  <div className="page-content">
+    <p className="page-text">{pageContent.part}</p>
+  </div>
+  <div className="page-options">
+    <button className="option-button" onClick={handleOption1}>{pageContent.option1}</button>
+    <button className="option-button" onClick={handleOption2}>{pageContent.option2}</button>
+  </div>
+  <div className="page-number">{currentPage} {pageContent.status}</div>
+</div>
+
     );
   }
 };

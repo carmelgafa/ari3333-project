@@ -39,7 +39,7 @@ class OpenAIStoryWriter:
         self.page_number+=1
         return title
 
-    def get_next_page(self, option:int):
+    def get_next_page(self, option:int)->str:
         '''
         Returns the next page of the story
         '''
