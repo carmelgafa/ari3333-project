@@ -47,6 +47,7 @@ useEffect(() => {
           );
           const pageData = JSON.parse(JSON.stringify(page_response.data));
           setPageContent(pageData);
+          
           setIsLoading(false);
         }
       } catch (error) {
