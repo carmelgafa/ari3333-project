@@ -1,10 +1,12 @@
+'''responsible to write the text for the story'''
+
 import openai
-import openai_secret
+import system_secret as system_secret
 from openai_prompts import prompt_restart_story
 from openai_prompts import prompt_story_title
 from openai_prompts import prompt_next_page
 
-openai.api_key = openai_secret.API_KEY
+openai.api_key = system_secret.OPEANAI_API_KEY
 
 
 class OpenAIStoryWriter:

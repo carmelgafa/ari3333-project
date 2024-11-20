@@ -1,8 +1,10 @@
+'''responsible to generate cover images for stories'''
+
 import openai
-import openai_secret
+import system_secret as system_secret
 from openai_prompts import prompt_story_image
 
-openai.api_key = openai_secret.API_KEY
+openai.api_key = system_secret.OPEANAI_API_KEY
 
 class OpenAIStoryPainter:
     '''

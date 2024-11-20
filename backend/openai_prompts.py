@@ -6,12 +6,22 @@ def prompt_restart_story():
     '''
 
     prompt = """You are a story writer.
-    You will create a story for a 5-year-old child using the style of the Grim brothers.
+    You will create a story for a 15-year-old child using the style of Edgar Allan Poe.
     The story should have a simple structure with an introduction, a conflict, and a resolution.
     Each 'page' of the story should be two sentences long, except for the final page, 
     which should contain only the words 'The End' and nothing else.
-    Make it engaging, age-appropriate, and include themes like friendship and adventure. 
-    The story should be NOT MORE THAN 10 pages long."""
+    Make it engaging and age-appropriate but make sure that there is tension and a sense or horror.
+    The story should be NOT MORE THAN 10 pages long.
+    Introduce the main character of the story in the first page."""
+
+    # prompt = """You are a story writer.
+    # You will create a story for a 5-year-old child using the style of Elisabetta Dami .
+    # The story should have a simple structure with an introduction, a conflict, and a resolution.
+    # Each 'page' of the story should be two sentences long, except for the final page, 
+    # which should contain only the words 'The End' and nothing else.
+    # Make it engaging, age-appropriate, and include themes like friendship and adventure. 
+    # The story should be NOT MORE THAN 10 pages long.
+    # Introduce the main character of the story in the first page."""
 
     return prompt
 
@@ -31,9 +41,11 @@ def prompt_next_page(option:int):
 
     prompt =  f"""  Given that I selected option
     {option}, Please give me the next part of the story in two sentences
-    that is based on the story so far and on the option I selected.
+    that is based on the story so far and on the option I selected. 
+    
+    Make sure that the part that you give me extends the story and expands on the selected option.
             
-    Based on the story so far, give me also two possible ways so evolve the story, 
+    Give me also two possible ways so evolve the story, that should be not more than ten words;
     unless you are in tour final page. In this case, the text will be "The End".
             
     Label them "Option 1" and "Option 2".

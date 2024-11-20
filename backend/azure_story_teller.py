@@ -1,11 +1,13 @@
+'''responsible to generate the speech for the story'''
+
 import os
 import time
+from system_secret import AZURE_SUBSCRIPTION_KEY
 import azure.cognitiveservices.speech as speechsdk
 
 # Initialize the Text-to-Speech service
 def azure_tts(text)-> bool:
     # Replace these with your Azure TTS credentials
-    subscription_key = "37QUuC4eUTVLa5UP2U4DHFRVvUSrGF0tAttG9P3GiQVIhQGdTj19JQQJ99AKACi5YpzXJ3w3AAAYACOGfGVC"
     region = "northeurope" 
 
     file_name = f"output_file_{time.strftime('%Y%m%d-%H%M%S')}.wav"
@@ -16,7 +18,7 @@ def azure_tts(text)-> bool:
         file_name)
 
     # Configure the speech service
-    speech_config = speechsdk.SpeechConfig(subscription=subscription_key, region=region)
+    speech_config = speechsdk.SpeechConfig(subscription=AZURE_SUBSCRIPTION_KEY, region=region)
     audio_config = speechsdk.audio.AudioOutputConfig(filename=output_file)
 
     # Create the synthesizer
