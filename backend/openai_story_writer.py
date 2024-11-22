@@ -24,7 +24,7 @@ class OpenAIStoryWriter:
         '''
         self.messages = [{"role": "user", "content": prompt_restart_story()}]
 
-    def generate_story_title(self):
+    def generate_story_title(self)->str:
         '''
         Returns the title of the story
         '''

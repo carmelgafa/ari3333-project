@@ -20,14 +20,23 @@ class OpenAIStoryPainter:
         '''
 
         # Generate the image
-        response = openai.Image.create(
-            prompt=prompt_story_image(book_title),
-            n=1,
-            size="256x256"
-        )
+        try:
+            response = openai.Image.create(
+                prompt=prompt_story_image(book_title),
+                n=1,
+                size="256x256"
+            )
+        except openai.error.OpenAIError as e:
+            print(f"Error generating image: {e}")
+            return None
+
 
         # Extract the URL of the generated image
-        image_url = response['data'][0]['url']
+        try:
+            image_url = response['data'][0]['url']
+        except (KeyError, IndexError) as e:
+            print(f"Unexpected response format: {response}\nError: {e}")
+            return None
 
         return image_url
 
