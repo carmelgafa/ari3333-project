@@ -24,7 +24,7 @@ class OpenAIStoryWriter:
         '''
         self.messages = [{"role": "user", "content": prompt_restart_story()}]
 
-    def get_story_title(self):
+    def generate_story_title(self):
         '''
         Returns the title of the story
         '''
@@ -41,7 +41,7 @@ class OpenAIStoryWriter:
         self.page_number+=1
         return title
 
-    def get_next_page(self, option:int)->str:
+    def generate_next_page_text(self, option:int)->str:
         '''
         Returns the next page of the story
         '''
@@ -61,7 +61,7 @@ class OpenAIStoryWriter:
 if __name__ == "__main__":
     writer = OpenAIStoryWriter()
 
-    print("Title:", writer.get_story_title())
+    print("Title:", writer.generate_story_title())
 
-    while writer.get_next_page(1).strip() != "The End":
-        print("Page:", writer.get_next_page(1))
+    while writer.generate_next_page_text(1).strip() != "The End":
+        print("Page:", writer.generate_next_page_text(1))
