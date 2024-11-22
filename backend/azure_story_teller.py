@@ -6,7 +6,7 @@ from system_secret import AZURE_SUBSCRIPTION_KEY
 import azure.cognitiveservices.speech as speechsdk
 
 # Initialize the Text-to-Speech service
-def azure_tts(text)-> bool:
+def generate_speech(text)-> bool:
     # Replace these with your Azure TTS credentials
     region = "northeurope" 
 
@@ -41,4 +41,4 @@ def azure_tts(text)-> bool:
 
 # Example Usage
 text_to_speak = "Hello, this is a demonstration of Azure Text-to-Speech!"
-azure_tts(text_to_speak)
+generate_speech(text_to_speak)

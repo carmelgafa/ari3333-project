@@ -71,11 +71,20 @@ def prompt_story_image(book_title:str):
     Returns the prompt for getting the image of the story
     '''
     prompt = (
-        """A whimsical pencil-drawn illustration
-        evoking a gentle, storybook atmosphere. The drawing style is delicate, with fine details 
-        and shading that give the scene a charming, 
-        hand-drawn quality, suitable for a children's book cover"
+        """A  pencil-drawn illustration
+        evoking a storybook atmosphere with horror undertones. 
+        The drawing style is delicate, with fine details 
+        and shading that give the scene a uncomfortable, 
+        hand-drawn quality, suitable for a teenagers horror book cover"
         The title of the story is: """ + book_title
     )
+        
+    # prompt = (
+    #     """A whimsical pencil-drawn illustration
+    #     evoking a gentle, storybook atmosphere. The drawing style is delicate, with fine details 
+    #     and shading that give the scene a charming, 
+    #     hand-drawn quality, suitable for a children's book cover"
+    #     The title of the story is: """ + book_title
+    # )
 
     return prompt
