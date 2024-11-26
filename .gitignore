@@ -1,3 +1,13 @@
 /backend/venv
 /frontend/node_modules
 /backend/output_files
+backend/__pycache__/azure_story_teller.cpython-39.pyc
+backend/__pycache__/openai_prompts.cpython-39.pyc
+backend/__pycache__/openai_story_painter.cpython-39.pyc
+backend/__pycache__/openai_story_writer.cpython-39.pyc
+backend/__pycache__/story_parameters.cpython-39.pyc
+backend/__pycache__/azure_story_teller.cpython-39.pyc
+backend/__pycache__/openai_prompts.cpython-39.pyc
+backend/__pycache__/openai_story_painter.cpython-39.pyc
+backend/__pycache__/openai_story_writer.cpython-39.pyc
+backend/__pycache__/azure_story_teller.cpython-39.pyc
