@@ -6,15 +6,24 @@ from system_secret import AZURE_SUBSCRIPTION_KEY
 import azure.cognitiveservices.speech as speechsdk
 
 # Initialize the Text-to-Speech service
-def generate_speech(text)-> str:
 
+def generate_speech(text)-> str:
+    '''
+    Generates the speech for the text and saves it as a .wav file to the output_files folder
+    and returns the URL of the file
+    Generates the speech for the text
+    '''
+
+    # The region of the Azure Text-to-Speech service
     region = "northeurope" 
 
+    # Create a unique file name for the output file
     file_name = f"output_file_{time.strftime('%Y%m%d-%H%M%S')}.wav"
 
     # Create the output folder if it doesn't exist
     os.makedirs(os.path.join(os.path.dirname(__file__), "output_files"), exist_ok=True)
 
+    # The full path of the output file
     output_file = os.path.join(
         os.path.dirname(__file__),
         "output_files",
@@ -22,6 +31,7 @@ def generate_speech(text)-> str:
 
     # Configure the speech service
     speech_config = speechsdk.SpeechConfig(subscription=AZURE_SUBSCRIPTION_KEY, region=region)
+    # Configure the audio output to save to a file
     audio_config = speechsdk.audio.AudioOutputConfig(filename=output_file)
 
     # Create the synthesizer
@@ -40,10 +50,12 @@ def generate_speech(text)-> str:
         if cancellation_details.error_details:
             print(f"Error details: {cancellation_details.error_details}")
 
+    # Return the URL of the file
     return f'http://localhost:8080/backend/output_files/{file_name}'
 
 
+
 if __name__ == "__main__":
-# Example Usage
+    # Example Usage
     text_to_speak = "Hello, this is a demonstration of Azure Text-to-Speech!"
     generate_speech(text_to_speak)
