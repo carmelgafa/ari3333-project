@@ -13,6 +13,13 @@ The project consists of two folders:
 - `frontend` that contains the react frontend application
 - `backend` contains the python backend code that interacts with openai and azure
 
+### Prerequisites
+
+The system requires the following packages
+
+- Node.js version 16.20.2
+- Python version 3.12.5
+
 ### Application execution
 
 In order to execute this application the following steps must be executed. It is assumed the prerequisites for running this application are installed.
