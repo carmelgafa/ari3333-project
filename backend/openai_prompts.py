@@ -45,9 +45,7 @@ def prompt_next_page(option:int)->str:
     
     Given that I selected option {option}, give me the next part of the story in a paragraph
     that extend the story so far and on the option I selected.\n
-
-
-            
+       
     Give me also two possible ways to evolve the story, that should be not more than ten words;
     unless you are in tour final page. In this case, the text will be "The End".\n
             

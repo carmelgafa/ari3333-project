@@ -5,18 +5,21 @@ from flask import Flask, jsonify
 from flask_cors import CORS  # Import CORS
 from openai_story_writer import OpenAIStoryWriter
 from openai_story_painter import OpenAIStoryPainter
-from azure_story_teller import generate_speech
+from azure_story_teller import AzureAIStoryTeller
 
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS
 
-# Create an instance of OpenAIStoryWriter that 
+# Create an instance of OpenAIStoryWriter that
 # is used to generate stories and titles
 writer = OpenAIStoryWriter()
 # Create an instance of OpenAIStoryPainter that
 # is used to generate images
 painter = OpenAIStoryPainter()
+# Create an instance of AzureAIStoryTeller that
+# is used to generate speech
+teller = AzureAIStoryTeller()
 
 @app.route('/api/page/<int:option>', methods=['GET'])
 def get_page(option):
@@ -30,7 +33,7 @@ def get_page(option):
     next_page_dict = json.loads(next_page)
 
     # Generate the speech for the next page and options
-    next_page_dict["textURL"] = generate_speech(
+    next_page_dict["textURL"] = teller.generate_speech(
         format_speech(next_page_dict)
         )
 
