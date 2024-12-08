@@ -10,11 +10,13 @@ def prompt_restart_story()->str:
 
     prompt = f"""
     You are a story writer.\n
-    You will create a story for a {story_parameters.READER_AGE}-year-old  using the style of {story_parameters.BOOK_STYLE}.\n
+    You will create a story for a {story_parameters.READER_AGE}-year-old\n
+    using the style of {story_parameters.BOOK_STYLE}.\n
     The story should have a simple structure with an introduction, a conflict, and a resolution.\n
     Each 'page' of the story should be two sentences long, except for the final page, 
     which should contain only the words 'The End' and nothing else.\n
-    Make it engaging and age-appropriate but make sure that there is {story_parameters.BOOK_THEME}.\n
+    Make it engaging and age-appropriate but make sure that there\n
+    is {story_parameters.BOOK_THEME}.\n
     The story should be NOT MORE THAN {story_parameters.MAXIMUM_PAGES} pages long.\n
     Introduce the main character of the story in the first page."""
 

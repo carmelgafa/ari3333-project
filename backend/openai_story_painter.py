@@ -31,7 +31,7 @@ class OpenAIStoryPainter:
             return None
 
 
-        # Extract the URL of the generated image
+        # URL of the generated image
         try:
             image_url = response['data'][0]['url']
         except (KeyError, IndexError) as e:

@@ -64,6 +64,7 @@ class AzureAIStoryTeller():
         return f'http://localhost:8080/backend/output_files/{file_name}'
 
 
+
 if __name__ == "__main__":
 
     teller = AzureAIStoryTeller()
