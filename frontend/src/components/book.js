@@ -142,7 +142,7 @@ useEffect(() => {
         <button 
           className="audio-button" 
           onClick={() => playAudio(pageContent.textURL)}>
-            <span>🔊</span>
+            <span role='img'>🔊</span>
         </button>
         <div className="page-content">
           <p className="page-text">{pageContent.part}</p>

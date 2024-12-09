@@ -63,5 +63,5 @@ if __name__ == "__main__":
 
     print("Title:", writer.generate_story_title())
 
-    while writer.generate_next_page_text(1)["status"] != "Complete":
+    while writer.generate_next_page_text(1).strip()["status"] != "Complete":
         print("Page:", writer.generate_next_page_text(1))
