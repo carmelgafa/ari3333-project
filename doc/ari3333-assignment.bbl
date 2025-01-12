@@ -1,0 +1,162 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{brooker2021filling}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=532d1ae155dd4188bd7a2f524377c437}{%
+           family={Brooker},
+           familyi={B\bibinitperiod},
+           given={Will},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{fullhash}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{fullhashraw}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{bibnamehash}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{authorbibnamehash}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{authornamehash}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{authorfullhash}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{authorfullhashraw}{532d1ae155dd4188bd7a2f524377c437}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Participations: Journal of Audience and Reception Studies}
+      \field{number}{2}
+      \field{title}{Filling in the gaps: Creative imagination and nostalgia in ZX Spectrum Gaming}
+      \field{volume}{18}
+      \field{year}{2021}
+      \field{pages}{3\bibrangedash 43}
+      \range{pages}{41}
+    \endentry
+    \entry{demonfromdarkside2020}{online}{}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labeltitlesource}{title}
+      \field{title}{Demon from the Darkside	}
+      \verb{urlraw}
+      \verb https://worldofspectrum.org/archive/software/text-adventures/demon-from-the-darkside-compass-software
+      \endverb
+      \verb{url}
+      \verb https://worldofspectrum.org/archive/software/text-adventures/demon-from-the-darkside-compass-software
+      \endverb
+      \warn{\item online entry 'demonfromdarkside2020' (references.bib): Invalid format 'May 25, 2020' of date field 'date' - ignoring}
+    \endentry
+    \entry{fotedar2020storytelling}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=7d073a82c36b42d14f73a474480d7e3d}{%
+           family={Fotedar},
+           familyi={F\bibinitperiod},
+           given={Sonali},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2cec77fa54483b0863d2e473e6d4083a}{%
+           family={Vannisselroij},
+           familyi={V\bibinitperiod},
+           given={Koen},
+           giveni={K\bibinitperiod}}}%
+        {{hash=58f0cd0f7b54c15a2d5b526202b32971}{%
+           family={Khalil},
+           familyi={K\bibinitperiod},
+           given={Shama},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b11e0ac65d95990c17093366a18682cd}{%
+           family={Ploeg},
+           familyi={P\bibinitperiod},
+           given={Bas},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{caedab4d73cf63ba34eb97c60fb54ddb}
+      \strng{fullhash}{5aeb9cb5e3a6448103c91fcc90e1717b}
+      \strng{fullhashraw}{5aeb9cb5e3a6448103c91fcc90e1717b}
+      \strng{bibnamehash}{caedab4d73cf63ba34eb97c60fb54ddb}
+      \strng{authorbibnamehash}{caedab4d73cf63ba34eb97c60fb54ddb}
+      \strng{authornamehash}{caedab4d73cf63ba34eb97c60fb54ddb}
+      \strng{authorfullhash}{5aeb9cb5e3a6448103c91fcc90e1717b}
+      \strng{authorfullhashraw}{5aeb9cb5e3a6448103c91fcc90e1717b}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{AI4Narratives@ IJCAI}
+      \field{title}{Storytelling AI: A Generative Approach to Story Narration.}
+      \field{year}{2020}
+      \field{pages}{19\bibrangedash 22}
+      \range{pages}{4}
+    \endentry
+    \entry{vidrih2023generative}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f130526625e89b965d77488079377ff3}{%
+           family={Vidrih},
+           familyi={V\bibinitperiod},
+           given={Marko},
+           giveni={M\bibinitperiod}}}%
+        {{hash=47d3ac4695913f5100f7273cb4724f21}{%
+           family={Mayahi},
+           familyi={M\bibinitperiod},
+           given={Shiva},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{fullhash}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{fullhashraw}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{bibnamehash}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{authorbibnamehash}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{authornamehash}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{authorfullhash}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{authorfullhashraw}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2309.09048}
+      \field{title}{Generative AI-Driven Storytelling: A New Era for Marketing}
+      \field{year}{2023}
+    \endentry
+    \entry{woodcock2012zx}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=f21b6c0b585acc0d97f5dfb29b91f7c3}{%
+           family={Woodcock},
+           familyi={W\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Lulu. com}%
+      }
+      \strng{namehash}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{fullhash}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{fullhashraw}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{bibnamehash}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{authorbibnamehash}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{authornamehash}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{authorfullhash}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{authorfullhashraw}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The ZX Spectrum on Your PC}
+      \field{year}{2012}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
