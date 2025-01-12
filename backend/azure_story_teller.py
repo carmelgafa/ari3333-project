@@ -5,57 +5,68 @@ import time
 from system_secret import AZURE_SUBSCRIPTION_KEY
 import azure.cognitiveservices.speech as speechsdk
 
-# Initialize the Text-to-Speech service
+class AzureAIStoryTeller():
 
-def generate_speech(text)-> str:
-    '''
-    Generates the speech for the text and saves it as a .wav file to the output_files folder
-    and returns the URL of the file
-    Generates the speech for the text
-    '''
+    def __init__(self):
+        '''
+        Initializes the AzureAIStoryTeller.
 
-    # The region of the Azure Text-to-Speech service
-    region = "northeurope" 
+        Sets up the speech configuration for the Azure Cognitive Service Speech
+        with the subscription key and region from the system_secret file.
+        '''
+        region = "northeurope"
+        self.speech_config = speechsdk.SpeechConfig(
+            subscription=AZURE_SUBSCRIPTION_KEY,
+            region=region)
 
-    # Create a unique file name for the output file
-    file_name = f"output_file_{time.strftime('%Y%m%d-%H%M%S')}.wav"
+    def generate_speech(self, text)-> str:
+        '''
+        Generates the speech for the story.
 
-    # Create the output folder if it doesn't exist
-    os.makedirs(os.path.join(os.path.dirname(__file__), "output_files"), exist_ok=True)
+        Given a text, it generates a audio file 
+        using the Azure Cognitive Service Speech 
+        and saves it to the output_files folder.
 
-    # The full path of the output file
-    output_file = os.path.join(
-        os.path.dirname(__file__),
-        "output_files",
-        file_name)
+        Returns the URL of the generated audio file.
+        '''
 
-    # Configure the speech service
-    speech_config = speechsdk.SpeechConfig(subscription=AZURE_SUBSCRIPTION_KEY, region=region)
-    # Configure the audio output to save to a file
-    audio_config = speechsdk.audio.AudioOutputConfig(filename=output_file)
+        file_name = f"output_file_{time.strftime('%Y%m%d-%H%M%S')}.wav"
 
-    # Create the synthesizer
-    synthesizer = speechsdk.SpeechSynthesizer(
-        speech_config=speech_config, audio_config=audio_config)
+        # Create the output folder if it doesn't exist
+        os.makedirs(os.path.join(os.path.dirname(__file__), "output_files"), exist_ok=True)
 
-    # Synthesize the text
-    result = synthesizer.speak_text_async(text).get()
+        output_file = os.path.join(
+            os.path.dirname(__file__),
+            "output_files",
+            file_name)
 
-    # Check the result
-    if result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
-        print(f"Speech synthesized and saved to {output_file}")
-    elif result.reason == speechsdk.ResultReason.Canceled:
-        cancellation_details = result.cancellation_details
-        print(f"Speech synthesis canceled: {cancellation_details.reason}")
-        if cancellation_details.error_details:
-            print(f"Error details: {cancellation_details.error_details}")
+        # Configure the speech service
+        audio_config = speechsdk.audio.AudioOutputConfig(
+            filename=output_file)
 
-    # Return the URL of the file
-    return f'http://localhost:8080/backend/output_files/{file_name}'
+        # Create the synthesizer
+        synthesizer = speechsdk.SpeechSynthesizer(
+            speech_config=self.speech_config,
+            audio_config=audio_config)
+
+        # Synthesize the text
+        result = synthesizer.speak_text_async(text).get()
+
+        # Check the result
+        if result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
+            print(f"Speech synthesized and saved to {output_file}")
+        elif result.reason == speechsdk.ResultReason.Canceled:
+            cancellation_details = result.cancellation_details
+            print(f"Speech synthesis canceled: {cancellation_details.reason}")
+            if cancellation_details.error_details:
+                print(f"Error details: {cancellation_details.error_details}")
+
+        return f'http://localhost:8080/backend/output_files/{file_name}'
 
 
 
 if __name__ == "__main__":
-    # Example Usage
+
+    teller = AzureAIStoryTeller()
     text_to_speak = "Hello, this is a demonstration of Azure Text-to-Speech!"
-    generate_speech(text_to_speak)
+    teller.generate_speech(text_to_speak)
