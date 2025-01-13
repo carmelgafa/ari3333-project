@@ -131,7 +131,7 @@
 	This layer comprises three classes, each focusing on a specific interaction with OpenAI and Azure text-to-speech engines.
 	
 	\begin{enumerate}
-		\item\textbf{\texttt{OpenAIStoryWriter}} creates the story's narrative using OpenAI's \textbf{\texttt{gpt-3.5-turbo}} engine. The class maintains a list of messages submitted and returned from the engine required to maintain context for a book being developed and the number of pages generated for a developing book. It has three main methods:
+		\item \textbf{\texttt{OpenAIStoryWriter}} creates the story's narrative using OpenAI's \textbf{\texttt{gpt-3.5-turbo}} engine. The class maintains a list of messages submitted and returned from the engine required to maintain context for a book being developed and the number of pages generated for a developing book. It has three main methods:
 		\begin{itemize}
 			\item\textbf{\texttt{restart\_story}} starts a new story by starting a new message array to be used with OpenAI and posting a first prompt that informs the engine about the theme, author style, target age and desired number of pages for the book to be generated.
 			\item\textbf{\texttt{generate\_story\_title}} adds the book title creation prompt to the OpenAI message array and submits the message thread to the engine. The engine, in turn, returns the name of the new book.
@@ -170,10 +170,10 @@
 		\item \textbf{\texttt{/API/title}} is the narrative's entry point. This call will instruct an \textbf{\texttt{OpenAIStoryWriter}} instance to generate a story title and an \textbf{\texttt{OpenAIStoryPainter}} instance to create a story image. It will, in turn, return an object with the following information:
 		\begin{tabular}{ll}
 			& \\
-			\{&  \\
-			\textbf{\texttt{"title"}}: &  \textbf{\texttt{"book\_title"}},\\
-			\textbf{\texttt{"image\_url"}}&  \textbf{\texttt{"image\_url"}}\\
-			\}&  \\
+			\{& \\
+			\textbf{\texttt{"title"}}: & \textbf{\texttt{"book\_title"}},\\
+			\textbf{\texttt{"image\_url"}}& \textbf{\texttt{"image\_url"}}\\
+			\}& \\
 			& \\
 		\end{tabular}
 
@@ -183,13 +183,13 @@
 	
 		\begin{tabular}{ll}
 			& \\
-			\{&  \\
+			\{& \\
 			\textbf{\texttt{"part"}}: \textbf{\texttt{"The next part of the story"}},\\
 			\textbf{\texttt{"option1"}}: \textbf{\texttt{"Option 1"}},\\
 			\textbf{\texttt{"option2"}}: \textbf{\texttt{"Option 2"}},\\
 			\textbf{\texttt{"status"}}: \textbf{\texttt{"Status"}},\\
 			\textbf{\texttt{"textURL"}}: \textbf{\texttt{"URL of the aud file for page"}}\\
-			\}&  \\
+			\}& \\
 			& \\
 		\end{tabular}
 	\end{itemize}
@@ -208,8 +208,96 @@
 	
 	In addition, this component monitors the story status for changes and re-renders to reflect the latest content retrieved from the backend. The status is particularly important when the last page of the interactive book is reached, as the book component will not display any options but prompts the user to start a new book
 	
-	The frontend also streams audio content from the backend tier, which, as explained previously, is generated using Azure Cognitive Services. The speech functionality seamlessly integrates into the user interface, enabling easy playback and pausing.	
+	The frontend also streams audio content from the backend tier, which, as explained previously, is generated using Azure Cognitive Services. The speech functionality seamlessly integrates into the user interface, enabling easy playback and pausing.
+	
+	
+	\section{System Workflows}
+	
+	This section will discuss how the backend and frontend systems are integrated and coordinated so that the interactive book can function correctly.
+	
+	
+	\subsection{Initial Page Loading}
+	
+	When the application is first launched, the frontend performs the following tasks, as shown in Figure \ref{fig:img-ari3333-loading-workflow}:
+	
+	\begin{enumerate}[]
+		\item API Call to the backend system: The frontend system requests the backend \textbf{\texttt{api/title}} endpoint to retrieve the book's title and the associated title image.
+		\item Rendering the Title Page: Upon receiving the response, the Book component displays the title text and image on the screen. The user is then prompted to proceed to the story's first page.
+	\item \end{enumerate}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{img/img-ARI3333-loading-workflow}
+		\caption{Interactive book loading workflow}
+		\label{fig:img-ari3333-loading-workflow}
+	\end{figure}
+	
+	
+	When the user selects the Start button, the following tasks take place as can be seen in Figure \ref{fig:img-ari3333-initiation-workflow}:
+	
+	\begin{enumerate}[]
+		\item API Call to Fetch the First Page: The frontend sends a \textbf{\texttt{GET}} request to the backend endpoint specifying that the selected option, in this case, is 0, as there was no option selection, \textbf{\texttt{/api/page/0}} to retrieve the first page's content, options, and associated audio file URL.
+		\item Rendering the First Page: The Book component updates to display the text for the first page, the user-selectable options for advancing the story, and an audio playback button that can be used to play the generated speech.
+	\end{enumerate}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/img-ARI3333-initiation-workflow}
+		\caption{Interactive book press Start button workflow}
+		\label{fig:img-ari3333-initiation-workflow}
+	\end{figure}
+	
+	
+	\subsection{Page Navigation Workflow}
+	
+	The user progresses through the story by selecting options. The tasks that take place are very similar to those executed when the start button is pressed, as we can see in Figure \ref{fig:img-ari3333-navigation-workflow} but in this particular case, a valid option is specified and subsequently processed by the backend:
+
+	\begin{enumerate}[]
+		\item User action: The user clicks either option button to determine the story's next segment.
+		\item Backend communication: The frontend system sends a request to the backend, providing details about the selected option number.
+		\item Content rendering: The backend returns the text, audio URL, status and options for the next page. The \textbf{\texttt{Book}} component updates to display the new content.
+	\end{enumerate}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/img-ARI3333-navigation-workflow}
+		\caption{Interactive book navigation workflow}
+		\label{fig:img-ari3333-navigation-workflow}
+	\end{figure}
+	
+	
+	\subsection{Completion Workflow}
+	
+	Figure \ref{fig:img-ari3333-completion-workflow} similar sequence of events occurs when the end of the interactive book is reached. In this case, the status flag is set to complete, and the \textbf{\texttt{Book}} component in the frontend tier will not display the options and invite the user to start a new book instead. If selected, a reset action triggers a call to the backend, resetting the book's state and fetching a new title and initial page content.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/img-ARI3333-completion-workflow}
+		\caption{Interactive book completion workflow}
+		\label{fig:img-ari3333-completion-workflow}
+	\end{figure}
+	
+	
+	\section{Ethical considerations}
 		
+	The previous sections show how an interactive book system can be constructed using popular technologies. The system is also reasonably easy to develop and extend. However, many social and ethical considerations surround AI-generated interactive books. The considerations have profound implications that extend beyond literature and technology. In this section, we will mention some of these considerations and discuss why the realization of such systems is so complex.
+	
+	There are concerns about the possible devaluation of human creativity if AI-generated content becomes popular. The increasing role of AI in creative processes, especially in the case of interactive storytelling, challenges traditional notions of authorship and human creativity \cite{udhayakumarexploring}. As AI systems become more sophisticated, it becomes essential to re-evaluate how we define and value human input in artistic endeavours. This shift in thinking could lead to new collaborative models between humans and AI, where both contribute to the creative process\cite{udhayakumarexploring}.
+	
+	
+	AI-generated interactive books, by their nature, influence the readers, primarily if the stories are targeted at children\cite{salazar2024generative}. The nature of such stories is highly complex because the stories may not be repeatable and are unique in every generation.   If any of these narratives are biased or lack diversity, they risk perpetuating harmful stereotypes and reinforcing societal inequalities. Addressing bias in AI systems is therefore crucial to ensure that these forms of storytelling represent a wide range of voices and perspectives. The ethical development and deployment of AI in creative fields are essential to prevent the reinforcement of harmful ideologies through technology. In addition, if the readers feel that their choices are predetermined or that the AI is steering them towards specific outcomes, they will have their trust in the interactive experience eroded considerably, impacting their broader adoption and acceptance of AI-generated content. AI-generated interactive books have massive educational potential as they offer engaging and personalized learning experiences. Addressing bias, ensuring transparency, and fostering critical thinking skills in students is essential. 
+	
+	It is also crucial to avoid over-reliance on AI and ensure that these technologies enhance, rather than replace, human educators\cite{salazar2024generative}. Educators are already raising concerns about plagiarism and the academic integrity of AI tools. Studies\cite{delello2023exploring} highlight the increasing use of AI for assignments, with 43\% of college students admitting to using AI like ChatGPT for schoolwork, raising difficult questions about what constitutes cheating and how to assess student work fairly.
+	
+	Instructors may also be tempted to rely on AI writing assistants to ease their workload. However, if these tools are biased, they could lead to unfair grading practices, as one study illustrated in a hypothetical scenario where AI feedback disproportionately focuses on grammar for minority students while suggesting content ideas for others\cite{salazar2024generative}.
+	
+	Another interesting aspect of such systems is the balance between personalization and privacy\cite{kutty2021personalization}. Sophisticated personalization entails the collection and utilization of reader data, and this raises concerns about privacy and the potential misuse of personal information. Readers should have control over their data and be informed about how their information shapes their interactive experiences.
+	
+	
+	The blurring of authorship lines and the collaboration between humans and AI necessitate a re-evaluation of existing legal frameworks, particularly regarding copyright and intellectual property rights\cite{kur2019european}. Determining ownership and attribution in AI-generated works presents legal challenges that require careful consideration. As AI plays a more significant role in creative industries, new legal and regulatory frameworks may be needed to address the unique challenges posed by these technologies.
+	
+	
+	
 	
 \printbibliography
 \onecolumn
@@ -243,7 +331,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\linewidth]{"img/img-ARI3333-project-conceptual-diagram (1)"}
-		\caption{}
+		\caption{Interactive book architecture diagram}
 		\label{fig:img-ari3333-project-conceptual-diagram-1}
 	\end{figure}
 
@@ -254,14 +342,26 @@
 	\centering
 	\begin{tabular}{|l|p{8cm}|}
 		\hline
-		Prompt name & Prompt text \\ \hline
-		\textbf{\texttt{prompt\_restart\_story}} & You will create a story for a \textbf{\texttt{READER\_AGE}}-year-old using the style of \textbf{\texttt{BOOK\_STYLE}}. The story should have a simple structure with an introduction, a conflict, and a resolution. Each 'page' of the story should be two sentences long, except for the final page,which should contain only the words \textbf{\texttt{'The End'}} and nothing else. Make it engaging and age-appropriate but make sure that there is \textbf{\texttt{BOOK\_THEME}}.The story should be NOT MORE THAN \textbf{\texttt{MAXIMUM\_PAGES}} pages long. Introduce the main character of the story in the first page. \\ \hline
+		& \\
+		\textbf{Prompt name} & \textbf{Prompt text} \\
+		& \\ \hline
+				
+		& \\
+		\textbf{\texttt{prompt\_restart\_story}} & You will create a story for a \textbf{\texttt{READER\_AGE}}-year-old using the style of \textbf{\texttt{BOOK\_STYLE}}. The story should have a simple structure with an introduction, a conflict, and a resolution. Each 'page' of the story should be two sentences long, except for the final page,which should contain only the words \textbf{\texttt{'The End'}} and nothing else. Make it engaging and age-appropriate but make sure that there is \textbf{\texttt{BOOK\_THEME}}.The story should be NOT MORE THAN \textbf{\texttt{MAXIMUM\_PAGES}} pages long. Introduce the main character of the story in the first page. \\ 
+		& \\ \hline
 		
-		\textbf{\texttt{prompt\_story\_title}} & Give me only the title of the story. \\ \hline
+		& \\
+		\textbf{\texttt{prompt\_story\_title}} & Give me only the title of the story. \\
+		& \\ \hline
 		
-		\textbf{\texttt{prompt\_next\_page}} & Given that I selected option \textbf{\texttt{OPTION}}, give me the next part of the story in a paragraph that extend the story so far and on the option I selected.Give me also two possible ways to evolve the story, that should be not more than ten words; unless you are on the final page. In this case, the text will be \textbf{\texttt{'The End'}}. Label them \textbf{\texttt{'Option 1'}} and \textbf{\texttt{'Option 2'}}. Give me also a status for the story, which can be one of the following: \textbf{\texttt{'In Progress'}} or \textbf{\texttt{'Complete'}} .Package your reply in a JSON object with the following format: \textbf{\texttt{ \{"part": "The next part of the story", "option1": "Option 1", "option2": "Option 2", "status": "Status" \} }} \\ \hline
+		& \\
+		\textbf{\texttt{prompt\_next\_page}} & Given that I selected option \textbf{\texttt{OPTION}}, give me the next part of the story in a paragraph that extend the story so far and on the option I selected.Give me also two possible ways to evolve the story, that should be not more than ten words; unless you are on the final page. In this case, the text will be \textbf{\texttt{'The End'}}. Label them \textbf{\texttt{'Option 1'}} and \textbf{\texttt{'Option 2'}}. Give me also a status for the story, which can be one of the following: \textbf{\texttt{'In Progress'}} or \textbf{\texttt{'Complete'}} .Package your reply in a JSON object with the following format: \textbf{\texttt{ \{"part": "The next part of the story", "option1": "Option 1", "option2": "Option 2", "status": "Status" \} }} \\
+		& \\ \hline
+				
+		& \\
+		\textbf{\texttt{prompt\_story\_image}} & A pencil-drawn illustration evoking a storybook atmosphere of \textbf{\texttt{BOOK\_THEME}}. The drawing style is aligned with the writing of \textbf{\texttt{BOOK\_STYLE}}. The title of the story is \textbf{\texttt{TITLE}} \\
+		& \\ \hline
 		
-		\textbf{\texttt{prompt\_story\_image}} & A pencil-drawn illustration evoking a storybook atmosphere of \textbf{\texttt{BOOK\_THEME}}. The drawing style is aligned with the writing of \textbf{\texttt{BOOK\_STYLE}}. The title of the story is \textbf{\texttt{TITLE}} \\ \hline
 	\end{tabular}
 \end{table}
 
