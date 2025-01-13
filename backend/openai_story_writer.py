@@ -5,6 +5,7 @@ import system_secret as system_secret
 from openai_prompts import prompt_restart_story
 from openai_prompts import prompt_story_title
 from openai_prompts import prompt_next_page
+from profanityfilter import ProfanityFilter
 
 openai.api_key = system_secret.OPEANAI_API_KEY
 
@@ -17,6 +18,8 @@ class OpenAIStoryWriter:
     def __init__(self):
         self.restart_story()
         self.page_number=0
+        self.pf = ProfanityFilter()
+
 
     def restart_story(self):
         '''
@@ -51,7 +54,8 @@ class OpenAIStoryWriter:
         chat = openai.ChatCompletion.create(
             model="gpt-3.5-turbo", messages=self.messages
         )
-        next_page = chat.choices[0].message.content
+        next_page = self.pf.censor(chat.choices[0].message.content)
+
         self.messages.append({"role": "assistant", "content": next_page})
 
         self.page_number+=1

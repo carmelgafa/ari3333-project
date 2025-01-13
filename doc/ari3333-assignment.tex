@@ -75,7 +75,7 @@
 	
 	Every page of the story also presents two choices for users through buttons that trigger the storytelling in a particular direction. Selecting one of them influences the drama of the unfolding story, making the adventure interactive and attractive. At the end of the story, no more extended options are available, but the user can start a new story. If the user selects that option, the system resets to the title page of a newly created story.
 	
-	Some examples of typical story navigation can be seen in Appendix \ref{appendix:navigation}.
+	Some examples of typical title and content pages that also include title images can be seen in Appendix \ref{appendix:navigation}.
 	
 	Controlling all stories are four variables. Adjusting these parameters allows the system to produce entirely different stories, making the interactive book adaptable to diverse audiences and contexts. 
 	
@@ -213,7 +213,7 @@
 	
 	\section{System Workflows}
 	
-	This section will discuss how the backend and frontend systems are integrated and coordinated so that the interactive book can function correctly.
+	This section will discuss how the backend and frontend systems are integrated and coordinated so that the interactive book can function correctly. It also illustrates the synchronization process between text, image, and audio generation to ensure all modalities align seamlessly.
 	
 	
 	\subsection{Initial Page Loading}
@@ -295,6 +295,14 @@
 	
 	
 	The blurring of authorship lines and the collaboration between humans and AI necessitate a re-evaluation of existing legal frameworks, particularly regarding copyright and intellectual property rights\cite{kur2019european}. Determining ownership and attribution in AI-generated works presents legal challenges that require careful consideration. As AI plays a more significant role in creative industries, new legal and regulatory frameworks may be needed to address the unique challenges posed by these technologies.
+	
+	\section{Addendum - Inappropriate content filtering}
+	
+	An issue that was dealt with after this project was already in an advanced state was the question of content filtering. The interactive book application has been designed so that the reader's age is specified as one of the parameters driving all content creation efforts. However, implementing safeguards for such content, especially when children are involved, is paramount.
+	
+	For this reason, a simple but effective content-checking solution has been implemented in the \textbf{\texttt{OpenAIStoryWriter}} class using the \textbf{\texttt{profanityfilter library}}. \textbf{\texttt{Profanityfilter}} is an open-source Python library that detects and obfuscates profanity from the text and replaces such text with \textbf{\texttt{***}}.
+	
+	Although this solution is arguably simplistic, it provides a first level of protection to readers at the word level. It is obvious that additional levels need to be incorporated for similar commercial systems, but these will be implemented through a separate mechanism, such as profanityfilter.
 	
 	
 	
