@@ -28,26 +28,24 @@
 	\maketitle
 	
 	\begin{abstract}
-		TODO
+		This project presents an AI-powered storytelling platform designed to create interactive and engaging, story experiences for readers. The platform's design allows seamless integration of various AI components, providing a scalable solution for creative content generation. This work highlights AI's transformative potential in education and entertainment, offering an interesting approach to interactive storytelling.
 	\end{abstract}
 	
 	\begin{IEEEkeywords}
-		TODO
+		Interactive Storytelling, AI Content Generation, OpenAI GPT, Azure Text-to-Speech, React, Flask, Multi-Modal Applications, Educational Technology.
 	\end{IEEEkeywords}
 	
 	\section{Introduction}
 	
 	Interactive storytelling systems have been a popular medium for delivering immersive and personalised experiences since the early days of home computing. In those early days, a genre of computer games emerged as text-based adventure games, where the story evolved based on user input through textual commands\cite{brooker2021filling}\cite{woodcock2012zx}. However, as computing power and graphical capabilities improved, the popularity of these games waned in favour of visually rich gaming experiences. Despite this decline, these games are still fondly remembered for their creativity and ability to engage.
-	
-	
+		
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[width=0.7\linewidth]{img/img-ari3333-project-report-adventure-games}
 		\caption{Demon from the Darkside was released in 1986 by Compass Software for ZX Spectrum 48K\cite{demonfromdarkside2020}}
 		\label{fig:img-ari3333-project-report-adventure-games}
 	\end{figure}
-	
-	
+		
 	Generative AI systems have the potential to introduce an innovative twist to stories by evolving based on user interaction\cite{vidrih2023generative} \cite{fotedar2020storytelling}. These technologies enable stories to adapt their plots in real time to align with the player’s mood and style.
 	
 	This paper takes a step in this direction by introducing an interactive book system—a web-based single-page application designed to ensure smooth, dynamic, and seamless user interaction. The system demonstrates the potential of Generative AI to provide engaging content that adapts to the user's age and taste, with these variables configured as system parameters.
@@ -58,9 +56,9 @@
 		
 		\item Section 2 examines the system, its outputs, and navigation.
 		\item Section 3 discusses the system architecture.
-		\item Section 4 explores the prompts and the prompt configuration mechanism.
-		\item Section 5 outlines potential enhancements for the system.
-		\item Section 6 addresses the ethical considerations associated with such systems.
+		\item Section 4 looks st the system's workflows.
+		\item Section 5 addresses the ethical considerations associated with such systems.
+		\item Section 6 talks about the use of generative AI platforms that were used during the development of this application.
 		
 	\end{itemize}
 	
@@ -126,7 +124,7 @@
 		\label{fig:img-ari3333-backend-class-diagram}
 	\end{figure}
 	
-	\subsection{AI integration classes}
+	\subsubsection{AI integration classes}
 	
 	This layer comprises three classes, each focusing on a specific interaction with OpenAI and Azure text-to-speech engines.
 	
@@ -147,22 +145,20 @@
 		\end{itemize}
 	\end{enumerate}
 	
-	\subsection{Secrets Storage}
+	\subsubsection{Secrets Storage}
 	The backend manages all sensitive information, such as API keys and authentication tokens, through the Secrets Storage module. By isolating and protecting these credentials, the system maintains secure and reliable connections to external services and mitigates potential vulnerabilities. 
 	
-	\subsection{Story parameters}
+	\subsubsection{Story parameters}
 	This module contains the four parameters required to create a book. Parameter management is an essential aspect of dynamic systems, such as interactive books, to ensure that the nature of the artefact produced can be easily adapted and extended. Although the abstraction system used in this project is trivial, it is also quite powerful, as the few parameters contained in this file can be modified to generate books with entirely different styles and themes.
-	
-	
-	\subsection{Prompt management}
+		
+	\subsubsection{Prompt management}
 	The prompt management module contains prompts for components in the backend to generate the interactive book. It utilises the story parameters module to ensure consistency and relevancy in the book creation process. 
 	
 	Commercial projects that rely on generative AI systems depend on teams of specialised prompt engineers who will maintain their work in databases that the application uses as required. Abstracting prompts from the codebase is, therefore, an important step in such systems to ensure that multidisciplinary teams can work together,
 	
 	The table in Appendix D contains all the prompts used in this system.
-	
-	
-	\subsection{API Interface}
+		
+	\subsubsection{API Interface}
 	
 	The API layer provides the interfaces so systems can consume the backend layer. As explained previously, it is written in Flask and contains just two endpoints:
 	
@@ -177,9 +173,7 @@
 			& \\
 		\end{tabular}
 
-
 		\item \textbf{\texttt{/API/page/int: option}} is called to create a new page for the story, supplying the user-selected option. This call first instructs the \textbf{\texttt{OpenAIStoryWriter}} instance to generate the new page. The writer returns a string containing the information for the new page: the image text, the page options, and whether the story is completed. The page text and options are then formatted and supplied to an \textbf{\texttt{AzureAIStoryTeller}} instance to convert the text into speech. This interaction returns the location of the audio file in a URL that external systems can access. The information is then bundled into one object and returned.
-	
 	
 		\begin{tabular}{ll}
 			& \\
@@ -194,8 +188,7 @@
 		\end{tabular}
 	\end{itemize}
 	
-	
-	\section{The frontend system}
+	\subsection{The frontend system}
 	
 	The interactive book system's front end is designed to deliver an engaging user experience. It is built using ReactJS as a single-page application that communicates with the backend tier to retrieve the dynamic content. The following sections discuss the frontend tier's components and workflows in more detail.
 	
@@ -215,7 +208,6 @@
 	
 	This section will discuss how the backend and frontend systems are integrated and coordinated so that the interactive book can function correctly. It also illustrates the synchronization process between text, image, and audio generation to ensure all modalities align seamlessly.
 	
-	
 	\subsection{Initial Page Loading}
 	
 	When the application is first launched, the frontend performs the following tasks, as shown in Figure \ref{fig:img-ari3333-loading-workflow}:
@@ -232,7 +224,6 @@
 		\label{fig:img-ari3333-loading-workflow}
 	\end{figure}
 	
-	
 	When the user selects the Start button, the following tasks take place as can be seen in Figure \ref{fig:img-ari3333-initiation-workflow}:
 	
 	\begin{enumerate}[]
@@ -246,7 +237,6 @@
 		\caption{Interactive book press Start button workflow}
 		\label{fig:img-ari3333-initiation-workflow}
 	\end{figure}
-	
 	
 	\subsection{Page Navigation Workflow}
 	
@@ -265,7 +255,6 @@
 		\label{fig:img-ari3333-navigation-workflow}
 	\end{figure}
 	
-	
 	\subsection{Completion Workflow}
 	
 	Figure \ref{fig:img-ari3333-completion-workflow} similar sequence of events occurs when the end of the interactive book is reached. In this case, the status flag is set to complete, and the \textbf{\texttt{Book}} component in the frontend tier will not display the options and invite the user to start a new book instead. If selected, a reset action triggers a call to the backend, resetting the book's state and fetching a new title and initial page content.
@@ -283,8 +272,7 @@
 	The previous sections show how an interactive book system can be constructed using popular technologies. The system is also reasonably easy to develop and extend. However, many social and ethical considerations surround AI-generated interactive books. The considerations have profound implications that extend beyond literature and technology. In this section, we will mention some of these considerations and discuss why the realization of such systems is so complex.
 	
 	There are concerns about the possible devaluation of human creativity if AI-generated content becomes popular. The increasing role of AI in creative processes, especially in the case of interactive storytelling, challenges traditional notions of authorship and human creativity \cite{udhayakumarexploring}. As AI systems become more sophisticated, it becomes essential to re-evaluate how we define and value human input in artistic endeavours. This shift in thinking could lead to new collaborative models between humans and AI, where both contribute to the creative process\cite{udhayakumarexploring}.
-	
-	
+		
 	AI-generated interactive books, by their nature, influence the readers, primarily if the stories are targeted at children\cite{salazar2024generative}. The nature of such stories is highly complex because the stories may not be repeatable and are unique in every generation.   If any of these narratives are biased or lack diversity, they risk perpetuating harmful stereotypes and reinforcing societal inequalities. Addressing bias in AI systems is therefore crucial to ensure that these forms of storytelling represent a wide range of voices and perspectives. The ethical development and deployment of AI in creative fields are essential to prevent the reinforcement of harmful ideologies through technology. In addition, if the readers feel that their choices are predetermined or that the AI is steering them towards specific outcomes, they will have their trust in the interactive experience eroded considerably, impacting their broader adoption and acceptance of AI-generated content. AI-generated interactive books have massive educational potential as they offer engaging and personalized learning experiences. Addressing bias, ensuring transparency, and fostering critical thinking skills in students is essential. 
 	
 	It is also crucial to avoid over-reliance on AI and ensure that these technologies enhance, rather than replace, human educators\cite{salazar2024generative}. Educators are already raising concerns about plagiarism and the academic integrity of AI tools. Studies\cite{delello2023exploring} highlight the increasing use of AI for assignments, with 43\% of college students admitting to using AI like ChatGPT for schoolwork, raising difficult questions about what constitutes cheating and how to assess student work fairly.
@@ -293,14 +281,12 @@
 	
 	Another interesting aspect of such systems is the balance between personalization and privacy\cite{kutty2021personalization}. Sophisticated personalization entails the collection and utilization of reader data, and this raises concerns about privacy and the potential misuse of personal information. Readers should have control over their data and be informed about how their information shapes their interactive experiences.
 	
-	
 	The blurring of authorship lines and the collaboration between humans and AI necessitate a re-evaluation of existing legal frameworks, particularly regarding copyright and intellectual property rights\cite{kur2019european}. Determining ownership and attribution in AI-generated works presents legal challenges that require careful consideration. As AI plays a more significant role in creative industries, new legal and regulatory frameworks may be needed to address the unique challenges posed by these technologies.
+
 	
 	\section{Use of GenAI platforms in this project}
-	
 		
 	Throughout this project, AI tools were used to validate and enhance the quality of the deliverables. The following outlines the tools employed and their impact on the development process:
-	
 	
 	\begin{itemize}
 		\item \textbf{\texttt{ChatGPT}} was utilized to enhance the quality of the styles for the frontend layer. Starting with an initial draft, iterative improvements were made to the look and feel of the interface through \textbf{\texttt{ChatGPT}} prompts, yielding excellent results. Additionally, all code produced during the project was reviewed using \textbf{\texttt{ChatGPT}} for validation and improvement. Many of the suggestions were deemed acceptable in the context of this project and subsequently implemented.
@@ -309,7 +295,6 @@
 		
 		\item The ethical considerations section was developed with the help of \textbf{\texttt{ChatGPT}}, which helped create the keyword for the Scopus academic search engine. \textbf{\texttt{Elicit}} was also used, and good results were obtained in this phase. The papers that were identified were processed and managed in Google's \textbf{\texttt{NotebookLM}}.
 	\end{itemize}
-
 	
 	Several key lessons emerged during the project:
 	
@@ -327,6 +312,7 @@
 	This project showcases how integrating modern AI technologies, such as OpenAI and Azure cognitive services, can deliver an interactive and engaging storytelling platform for young readers. By combining React for a dynamic single-page front-end, Flask for a robust backend, and these AI models for text, image, and speech generation, the system creates a sophisticated multi-modal user experience. 
 	
 	This work also highlights the potential of AI in creative content generation, emphasising simplicity, user interactivity, and age-appropriate narratives, serving as a foundation for future innovations in educational and entertainment applications.
+
 	
 	\section{Addendum - Inappropriate content filtering}
 	
@@ -335,9 +321,7 @@
 	For this reason, a simple but effective content-checking solution has been implemented in the \textbf{\texttt{OpenAIStoryWriter}} class using the \textbf{\texttt{profanityfilter library}}. \textbf{\texttt{Profanityfilter}} is an open-source Python library that detects and obfuscates profanity from the text and replaces such text with \textbf{\texttt{***}}.
 	
 	Although this solution is arguably simplistic, it provides a first level of protection to readers at the word level. It is obvious that additional levels need to be incorporated for similar commercial systems, but these will be implemented through a separate mechanism, such as profanityfilter.
-	
-	
-	
+
 	
 \printbibliography
 \onecolumn
@@ -347,7 +331,6 @@
 
 \section{Story Navigation}
 \label{appendix:navigation}
-	
 	
 	\begin{figure}[H]
 		\centering
@@ -362,7 +345,7 @@
 		\caption{Interactive book navigation for a children's story}
 		\label{fig:img-ari3333-project-report-story-children}
 	\end{figure}
-	
+
 	
 \pagebreak	
 \section{System architecture diagram}
@@ -374,6 +357,7 @@
 		\caption{Interactive book architecture diagram}
 		\label{fig:img-ari3333-project-conceptual-diagram-1}
 	\end{figure}
+
 
 \pagebreak
 \section{Interactive book prompts}
