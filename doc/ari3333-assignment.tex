@@ -296,6 +296,38 @@
 	
 	The blurring of authorship lines and the collaboration between humans and AI necessitate a re-evaluation of existing legal frameworks, particularly regarding copyright and intellectual property rights\cite{kur2019european}. Determining ownership and attribution in AI-generated works presents legal challenges that require careful consideration. As AI plays a more significant role in creative industries, new legal and regulatory frameworks may be needed to address the unique challenges posed by these technologies.
 	
+	\section{Use of GenAI platforms in this project}
+	
+		
+	Throughout this project, AI tools were used to validate and enhance the quality of the deliverables. The following outlines the tools employed and their impact on the development process:
+	
+	
+	\begin{itemize}
+		\item \textbf{\texttt{ChatGPT}} was utilized to enhance the quality of the styles for the frontend layer. Starting with an initial draft, iterative improvements were made to the look and feel of the interface through \textbf{\texttt{ChatGPT}} prompts, yielding excellent results. Additionally, all code produced during the project was reviewed using \textbf{\texttt{ChatGPT}} for validation and improvement. Many of the suggestions were deemed acceptable in the context of this project and subsequently implemented.
+		
+		\item This document was reviewed with \textbf{\texttt{Grammarly}} to identify and correct grammar errors, ensuring polished and professional writing.
+		
+		\item The ethical considerations section was developed with the help of \textbf{\texttt{ChatGPT}}, which helped create the keyword for the Scopus academic search engine. \textbf{\texttt{Elicit}} was also used, and good results were obtained in this phase. The papers that were identified were processed and managed in Google's \textbf{\texttt{NotebookLM}}.
+	\end{itemize}
+
+	
+	Several key lessons emerged during the project:
+	
+	\begin{itemize}
+		\item All the engines mentioned in this section are better suited when improving something already created. Asking any of these engines to produce something from scratch always resulted in a generic artefact unsuitable for a final deliverable..
+		
+		\item Code suggestions should be scrutinized before being implemented. Although many suggestions did improve the layout of the code for both the Python backend and the react frontend, there were also many suggestions that were plain wrong or relied on deprecated versions or modules. 
+		
+		\item A robust workflow that improves the inputs to work upon is vital. These inputs include papers and materials to help us quickly digest large amounts of data. The workflow used was \textbf{\texttt{Elicit}} for paper identification, \textbf{\texttt{NotebookLM}} for paper processing, and \textbf{\texttt{ChatGPT}} for validation.
+	\end{itemize}
+
+
+	\section{Conclusion}
+	
+	This project showcases how integrating modern AI technologies, such as OpenAI and Azure cognitive services, can deliver an interactive and engaging storytelling platform for young readers. By combining React for a dynamic single-page front-end, Flask for a robust backend, and these AI models for text, image, and speech generation, the system creates a sophisticated multi-modal user experience. 
+	
+	This work also highlights the potential of AI in creative content generation, emphasising simplicity, user interactivity, and age-appropriate narratives, serving as a foundation for future innovations in educational and entertainment applications.
+	
 	\section{Addendum - Inappropriate content filtering}
 	
 	An issue that was dealt with after this project was already in an advanced state was the question of content filtering. The interactive book application has been designed so that the reader's age is specified as one of the parameters driving all content creation efforts. However, implementing safeguards for such content, especially when children are involved, is paramount.

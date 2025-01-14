@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.5.24)  13 JAN 2025 22:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.5.24)  14 JAN 2025 23:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -723,30 +723,30 @@ Package pdftex.def Info: img/img-ARI3333-completion-workflow.png  used on input
 (pdftex.def)             Requested size: 176.39923pt x 76.78561pt.
  [4 <./img/img-ARI3333-loading-workflow.png> <./img/img-ARI3333-initiation-work
 flow.png> <./img/img-ARI3333-navigation-workflow.png> <./img/img-ARI3333-comple
-tion-workflow.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+tion-workflow.png>] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
 \OT1/ptm/m/n/10 class us-ing the \OT1/pcr/b/n/10 profanityfilter library\OT1/pt
 m/m/n/10 .
  []
 
 
-Underfull \hbox (badness 3492) in paragraph at lines 303--304
+Underfull \hbox (badness 3492) in paragraph at lines 335--336
 \OT1/pcr/b/n/10 Profanityfilter \OT1/ptm/m/n/10 is an open-source Python li-bra
 ry
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--311
+Underfull \hbox (badness 10000) in paragraph at lines 343--343
 []\OT1/ptm/m/it/10 Demon from the Dark-side\OT1/ptm/m/n/10 . \OT1/ptm/m/sc/10 u
 rl\OT1/ptm/m/n/10 : $https : / /
  []
 
 
-Underfull \hbox (badness 3942) in paragraph at lines 311--311
+Underfull \hbox (badness 3942) in paragraph at lines 343--343
 \OT1/ptm/m/n/10 worldofspectrum . org / archive / software / text -[]
  []
 
-[5] [6
+[6
 
 ]
 <img/img-ari3333-project-report-story-horror.png, id=39, 512.91624pt x 1150.297
@@ -754,7 +754,7 @@ Underfull \hbox (badness 3942) in paragraph at lines 311--311
 File: img/img-ari3333-project-report-story-horror.png Graphic file (type png)
 <use img/img-ari3333-project-report-story-horror.png>
 Package pdftex.def Info: img/img-ari3333-project-report-story-horror.png  used 
-on input line 322.
+on input line 354.
 (pdftex.def)             Requested size: 258.0pt x 578.60512pt.
 <img/img-ari3333-project-report-story-children.png, id=40, 505.89pt x 908.39375
 pt>
@@ -762,7 +762,7 @@ File: img/img-ari3333-project-report-story-children.png Graphic file (type png)
 
 <use img/img-ari3333-project-report-story-children.png>
 Package pdftex.def Info: img/img-ari3333-project-report-story-children.png  use
-d on input line 329.
+d on input line 361.
 (pdftex.def)             Requested size: 361.19843pt x 648.59566pt.
 
 Underfull \vbox (badness 7504) has occurred while \output is active []
@@ -779,27 +779,27 @@ File: img/img-ARI3333-project-conceptual-diagram (1).jpg Graphic file (type jpg
 )
 <use img/img-ARI3333-project-conceptual-diagram (1).jpg>
 Package pdftex.def Info: img/img-ARI3333-project-conceptual-diagram (1).jpg  us
-ed on input line 341.
+ed on input line 373.
 (pdftex.def)             Requested size: 464.39685pt x 423.94266pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9 <./img/img-ARI3333-project-conceptual-diagram (1).jpg>]
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 3
-66.
+98.
 
 (C:\Program Files\MiKTeX\tex/latex/psnfss\omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/b/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 366.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 398.
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--367
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
 \OT1/pcr/b/n/8 the story", "option1": "Option 1", "option2":
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 370--371
+Underfull \hbox (badness 1552) in paragraph at lines 402--403
 []\OT1/ptm/m/n/8 A pencil-drawn il-lus-tra-tion evok-ing a sto-ry-book at-mo-sp
 here of
  []
@@ -827,7 +827,7 @@ Package logreq Info: Writing requests to 'ari3333-assignment.run.xml'.
 Here is how much of TeX's memory you used:
  14120 strings out of 474424
  255946 string characters out of 5751554
- 1946496 words of memory out of 5000000
+ 1945496 words of memory out of 5000000
  36322 multiletter control sequences out of 15000+600000
  594628 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -839,7 +839,7 @@ rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 mb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Program
  Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on ari3333-assignment.pdf (10 pages, 1104301 bytes).
+Output written on ari3333-assignment.pdf (10 pages, 1106771 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
