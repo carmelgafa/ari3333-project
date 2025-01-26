@@ -1,17 +1,15 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'ari3333-assignment.blg'
-[81] biber-MSWIN64:340> INFO - === 
-[115] Biber.pm:420> INFO - Reading 'ari3333-assignment.bcf'
-[195] Biber.pm:994> INFO - Found 10 citekeys in bib section 0
-[204] Biber.pm:4463> INFO - Processing section 0
-[213] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
-[265] bibtex.pm:1713> INFO - LaTeX decoding ...
-[278] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[333] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[333] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[333] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[333] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[342] bbl.pm:676> INFO - Writing 'ari3333-assignment.bbl' with encoding 'UTF-8'
-[346] bbl.pm:779> INFO - Output to ari3333-assignment.bbl
-[346] Biber.pm:131> WARN - online entry 'demonfromdarkside2020' (references.bib): Invalid format 'May 25, 2020' of date field 'date' - ignoring
-[346] Biber.pm:133> INFO - WARNINGS: 1
+[80] biber-MSWIN64:340> INFO - === 
+[112] Biber.pm:420> INFO - Reading 'ari3333-assignment.bcf'
+[186] Biber.pm:994> INFO - Found 10 citekeys in bib section 0
+[195] Biber.pm:4463> INFO - Processing section 0
+[204] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
+[263] bibtex.pm:1713> INFO - LaTeX decoding ...
+[276] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[329] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[330] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[330] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[330] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[336] bbl.pm:676> INFO - Writing 'ari3333-assignment.bbl' with encoding 'UTF-8'
+[339] bbl.pm:779> INFO - Output to ari3333-assignment.bbl

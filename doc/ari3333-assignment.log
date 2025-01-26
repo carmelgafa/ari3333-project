@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.5.24)  14 JAN 2025 23:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.5.24)  26 JAN 2025 10:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -630,14 +630,7 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'ari3333-assignment.bbl' found.
 
-(ari3333-assignment.bbl
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'demonfromdarkside2020':
-(biblatex)                - online entry 'demonfromdarkside2020' (references.bi
-b): Invalid format 'May 25, 2020' of date field 'date' - ignoring.
-
-)
+(ari3333-assignment.bbl)
 Package biblatex Info: Reference section=0 on input line 20.
 Package biblatex Info: Reference segment=0 on input line 20.
 \c@lstlisting=\count430
@@ -735,17 +728,6 @@ Underfull \hbox (badness 3492) in paragraph at lines 321--322
 ry
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 327--327
-[]\OT1/ptm/m/it/10 Demon from the Dark-side\OT1/ptm/m/n/10 . \OT1/ptm/m/sc/10 u
-rl\OT1/ptm/m/n/10 : $https : / /
- []
-
-
-Underfull \hbox (badness 3942) in paragraph at lines 327--327
-\OT1/ptm/m/n/10 worldofspectrum . org / archive / software / text -[]
- []
-
 [6]
 <img/img-ari3333-project-report-story-horror.png, id=39, 512.91624pt x 1150.297
 5pt>
@@ -823,13 +805,13 @@ Package logreq Info: Writing requests to 'ari3333-assignment.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 14123 strings out of 474424
- 256008 string characters out of 5751554
+ 14122 strings out of 474424
+ 255990 string characters out of 5751554
  1945496 words of memory out of 5000000
- 36325 multiletter control sequences out of 15000+600000
+ 36324 multiletter control sequences out of 15000+600000
  594628 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,10n,81p,1315b,1558s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 66i,10n,81p,1315b,1553s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><C:/P
 rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts
@@ -837,7 +819,7 @@ rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 mb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Program
  Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on ari3333-assignment.pdf (10 pages, 1112046 bytes).
+Output written on ari3333-assignment.pdf (10 pages, 1112107 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

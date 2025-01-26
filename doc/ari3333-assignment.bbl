@@ -88,18 +88,13 @@
       \field{volume}{3}
       \field{year}{2023}
     \endentry
-    \entry{demonfromdarkside2020}{online}{}{}
+    \entry{demonfromdarkside2024}{misc}{}{}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labeltitlesource}{title}
-      \field{title}{Demon from the Darkside	}
-      \verb{urlraw}
-      \verb https://worldofspectrum.org/archive/software/text-adventures/demon-from-the-darkside-compass-software
-      \endverb
-      \verb{url}
-      \verb https://worldofspectrum.org/archive/software/text-adventures/demon-from-the-darkside-compass-software
-      \endverb
-      \warn{\item online entry 'demonfromdarkside2020' (references.bib): Invalid format 'May 25, 2020' of date field 'date' - ignoring}
+      \field{howpublished}{\url{https://worldofspectrum.org/archive/software/text-adventures/demon-from-the-darkside-compass-software}}
+      \field{note}{Accessed: December 25, 2024}
+      \field{title}{Demon from the Darkside - Compass Software}
     \endentry
     \entry{fotedar2020storytelling}{inproceedings}{}{}
       \name{author}{4}{}{%
@@ -281,7 +276,7 @@
       \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Exploring the impact of ai-generated narratives on the evolution of digital literature in the English language}
+      \field{title}{EXPLORING THE IMPACT OF AI-GENERATED NARRATIVES ON THE EVOLUTION OF DIGITAL LITERATURE IN THE ENGLISH LANGUAGE}
     \endentry
     \entry{vidrih2023generative}{article}{}{}
       \name{author}{2}{}{%
