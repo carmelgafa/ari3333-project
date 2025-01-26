@@ -1,0 +1,27 @@
+1. Start with explaining the system
+- an interactive book system that is data Driven
+- sleek and simple user interface
+
+2. Open architecture
+- talk about platforms used
+-- text generation for story title and content
+-- image generation for cover art
+-- speech generation for narration
+-- start the system explaining the three servers that are necessary
+
+3. Use the system
+- display settings file, start with children's story
+-- go through a whole story
+-- demonstrate audio playback
+-- demonstrate option selection effect
+-- go to end and start a new story
+
+4. change settings to horror and start a new story
+- observe change in tone and image
+- go through story
+
+5. end with mentioning improvements
+-- user data regarding likes
+-- ability for user to adapt their profile from a number of predefined / user created 
+-- security / ethical considerations
+--- data privacy
