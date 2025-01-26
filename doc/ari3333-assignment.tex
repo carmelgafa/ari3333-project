@@ -21,14 +21,14 @@
 	
 	\title{Interactive book system}
 	
-	\author{\IEEEauthorblockN{Carmel Gafa}
+	\author{\IEEEauthorblockN{Carmel Gafa'}
 		\date{December 2024}
 	}
 	
 	\maketitle
 	
 	\begin{abstract}
-		This project presents an AI-powered storytelling platform designed to create interactive and engaging, story experiences for readers. The platform's design allows seamless integration of various AI components, providing a scalable solution for creative content generation. This work highlights AI's transformative potential in education and entertainment, offering an interesting approach to interactive storytelling.
+		This project presents an AI-powered storytelling platform designed to create interactive and engaging, story experiences for readers. The platform's design allows seamless integration of various AI platforms, providing a scalable solution for creative content generation. This work highlights AI's transformative potential in education and entertainment, offering an interesting approach to interactive storytelling.
 	\end{abstract}
 	
 	\begin{IEEEkeywords}
@@ -48,7 +48,7 @@
 		
 	Generative AI systems have the potential to introduce an innovative twist to stories by evolving based on user interaction\cite{vidrih2023generative} \cite{fotedar2020storytelling}. These technologies enable stories to adapt their plots in real time to align with the player’s mood and style.
 	
-	This paper takes a step in this direction by introducing an interactive book system—a web-based single-page application designed to ensure smooth, dynamic, and seamless user interaction. The system demonstrates the potential of Generative AI to provide engaging content that adapts to the user's age and taste, with these variables configured as system parameters.
+	This project takes a step in this direction by introducing an interactive book system—a web-based single-page application designed to provide smooth, dynamic, and seamless user interaction. The system demonstrates the potential of Generative AI to provide engaging content that adapts to the user's age and taste, with these variables configured as system parameters.
 	
 	This paper is organised into the following sections:
 	
@@ -89,9 +89,9 @@
 	
 	\section {System architecture}
 	
-	The system utilises a three-tier architecture, with backend generative AI services and text-to-speech features coordinated by a middle layer that manages prompting and result aggregation. A frontend layer supports user interaction and displays the book's text and images. Communication among the layers occurs through RESTful APIs, which maintain a clear separation of concerns. This separation improves maintainability and scalability, allowing future expansions and integrations to be carried out quickly.
+	The system utilises a three-tier architecture, with backend generative AI services and text-to-speech features coordinated by a middle layer that also manages prompting and result aggregation. A frontend layer provides user interaction and displays the book's text and images. Communication among the layers occurs through RESTful APIs, that maintain a clear separation of concerns. This separation improves maintainability and scalability, allowing future expansions and integrations to be carried out quickly.
 	
-	The backend application is implemented as a Python Flask application that serves as the core orchestrator for content generation and coordination. This layer integrates external APIs, including OpenAI GPT for text and image generation and Azure Cognitive Services for text-to-speech conversion, to deliver a multimodal storytelling experience. The architecture implemented in this exercise also abstracts the story parameters, prompts, and system keys into separate modules to easily extend and maintain the system.
+	The backend application is implemented as a Python Flask application that serves as the core orchestrator for content generation and coordination. This layer integrates external APIs, for text and image generation and text-to-speech conversion, to deliver a multimodal storytelling experience. The architecture implemented in this exercise also abstracts the story parameters, prompts, and system keys into separate modules to easily extend and maintain the system.
 	
 	The frontend application is developed using React, leveraging its component-based architecture to ensure a user-friendly and visually engaging interface. As a single-page application, the system eliminates unnecessary page reloads, allowing users to navigate the story seamlessly while maintaining a dynamic and interactive experience. The frontend application also includes error-handling mechanisms to manage scenarios such as backend unavailability or invalid responses. Users are notified of such errors through messages in the user interface.
 	
@@ -112,7 +112,7 @@
 		
 	\begin{enumerate}
 		\item Integrations with large language models and text-to-speech systems are abstracted into specialised classes that provide a specific contribution to the interactive book, such as the book's writing, the image generation or the creation of the book image. These classes handle the integration with these engines and the management of message prompt arrays responsible for maintaining the context of a given interaction, which, in this case, is the evolution of the book.
-		\item Prompt management was abstracted into a separate module so that each integration class would call this module to inject prompts into its respective system. This decision was made to maintain consistency between the various prompts and make prompt management easier. It is safe to assume that in producing systems with similar integrations, prompt creation and management are carried out by different teams, and prompts will be contained in specialised databases. The decision to abstract prompts is a step in this direction.
+		\item Prompt management was abstracted into a separate module so that each integration class would call this module to inject prompts into its respective system. This decision was made to maintain consistency between the various prompts and make prompt management easier. It is safe to assume that in producing systems with similar integrations, prompt creation and management are carried out by different teams, and prompts will be contained in specialised databases. The decision to abstract prompts is aaligned with this visionm.
 		\item As explained previously, all books are based on four parameters: the theme, the author's style, the target audience's age, and the desired number of pages. These parameters are also contained in a separate module, so the interactive book type can be changed quickly without changing any code.
 		\item Flask API endpoints are the topmost level of this architecture and provide the most generic creation capabilities that, in most cases, consume some lower-level services. Such services include the creation of a title page or the creation of a page. The results of the endpoints are provided as JSON objects to the consumers
 	\end{enumerate}
@@ -123,6 +123,11 @@
 		\caption{The interactive book backend system class diagram}
 		\label{fig:img-ari3333-backend-class-diagram}
 	\end{figure}
+	
+	
+	Figure \ref{fig:img-ari3333-backend-class-diagram} shows the class diagram for the backend system. In the next sections, we will explain the functions delivered by these classes in more detail.
+	
+	
 	
 	\subsubsection{AI integration classes}
 	
@@ -173,7 +178,7 @@
 			& \\
 		\end{tabular}
 
-		\item \textbf{\texttt{/API/page/int: option}} is called to create a new page for the story, supplying the user-selected option. This call first instructs the \textbf{\texttt{OpenAIStoryWriter}} instance to generate the new page. The writer returns a string containing the information for the new page: the image text, the page options, and whether the story is completed. The page text and options are then formatted and supplied to an \textbf{\texttt{AzureAIStoryTeller}} instance to convert the text into speech. This interaction returns the location of the audio file in a URL that external systems can access. The information is then bundled into one object and returned.
+		\item \textbf{\texttt{/API/page/int: option}} is called to create a new page for the story, supplying the user-selected option. This call first instructs the \textbf{\texttt{OpenAIStoryWriter}} instance to generate the new page. The writer returns a string containing the information for the new page: the image text, the page options, and whether the story is completed. The page text and options are then formatted and supplied to an \textbf{\texttt{AzureAIStoryTeller}} instance to convert the text into speech. This interaction returns the location of the audio file in a URL that external systems can access. The information is then bundled into one JSON object and returned.
 	
 		\begin{tabular}{ll}
 			& \\
@@ -271,9 +276,9 @@
 		
 	The previous sections show how an interactive book system can be constructed using popular technologies. The system is also reasonably easy to develop and extend. However, many social and ethical considerations surround AI-generated interactive books. The considerations have profound implications that extend beyond literature and technology. In this section, we will mention some of these considerations and discuss why the realization of such systems is so complex.
 	
-	There are concerns about the possible devaluation of human creativity if AI-generated content becomes popular. The increasing role of AI in creative processes, especially in the case of interactive storytelling, challenges traditional notions of authorship and human creativity \cite{udhayakumarexploring}. As AI systems become more sophisticated, it becomes essential to re-evaluate how we define and value human input in artistic endeavours. This shift in thinking could lead to new collaborative models between humans and AI, where both contribute to the creative process\cite{udhayakumarexploring}.
+	There are the obvious concerns about the possible devaluation of human creativity if AI-generated content becomes popular. The increasing role of AI in creative processes, especially in the case of interactive storytelling, challenges traditional notions of authorship and human creativity \cite{udhayakumarexploring}. As AI systems become more sophisticated, it becomes essential to re-evaluate how we define and value human input in artistic endeavours. This shift in thinking could lead to new collaborative models between humans and AI, where both contribute to the creative process\cite{udhayakumarexploring}.
 		
-	AI-generated interactive books, by their nature, influence the readers, primarily if the stories are targeted at children\cite{salazar2024generative}. The nature of such stories is highly complex because the stories may not be repeatable and are unique in every generation.   If any of these narratives are biased or lack diversity, they risk perpetuating harmful stereotypes and reinforcing societal inequalities. Addressing bias in AI systems is therefore crucial to ensure that these forms of storytelling represent a wide range of voices and perspectives. The ethical development and deployment of AI in creative fields are essential to prevent the reinforcement of harmful ideologies through technology. In addition, if the readers feel that their choices are predetermined or that the AI is steering them towards specific outcomes, they will have their trust in the interactive experience eroded considerably, impacting their broader adoption and acceptance of AI-generated content. AI-generated interactive books have massive educational potential as they offer engaging and personalized learning experiences. Addressing bias, ensuring transparency, and fostering critical thinking skills in students is essential. 
+	AI-generated books, by their nature, influence the readers, primarily if the stories are targeted at children\cite{salazar2024generative}. The nature of such stories is highly complex because the stories may not be repeatable and are unique in every generation.   If any of these narratives are inappropriate, they risk perpetuating harmful stereotypes and reinforcing societal inequalities. Addressing bias in AI systems is therefore crucial to ensure that these forms of storytelling represent a wide range of voices and perspectives. The ethical development of AI in creative fields is essential to prevent the reinforcement of harmful ideologies through technology. In addition, if the readers feel that their choices are predetermined or that the AI is steering them towards specific outcomes, they will have their trust in the interactive experience eroded considerably, impacting their broader adoption and acceptance of AI-generated content. AI-generated books have massive educational potential as they offer engaging and personalized learning experiences. Addressing bias, ensuring transparency, and fostering critical thinking skills in students is essential. 
 	
 	It is also crucial to avoid over-reliance on AI and ensure that these technologies enhance, rather than replace, human educators\cite{salazar2024generative}. Educators are already raising concerns about plagiarism and the academic integrity of AI tools. Studies\cite{delello2023exploring} highlight the increasing use of AI for assignments, with 43\% of college students admitting to using AI like ChatGPT for schoolwork, raising difficult questions about what constitutes cheating and how to assess student work fairly.
 	
@@ -299,7 +304,7 @@
 	Several key lessons emerged during the project:
 	
 	\begin{itemize}
-		\item All the engines mentioned in this section are better suited when improving something already created. Asking any of these engines to produce something from scratch always resulted in a generic artefact unsuitable for a final deliverable..
+		\item All the engines mentioned in this section are better suited when improving something already created. Asking any of these engines to produce something from scratch always resulted in a generic artefact unsuitable for a final deliverable.
 		
 		\item Code suggestions should be scrutinized before being implemented. Although many suggestions did improve the layout of the code for both the Python backend and the react frontend, there were also many suggestions that were plain wrong or relied on deprecated versions or modules. 
 		
@@ -316,7 +321,7 @@
 	
 	\section{Addendum - Inappropriate content filtering}
 	
-	An issue that was dealt with after this project was already in an advanced state was the question of content filtering. The interactive book application has been designed so that the reader's age is specified as one of the parameters driving all content creation efforts. However, implementing safeguards for such content, especially when children are involved, is paramount.
+	An issue that was dealt with after this project was already in an advanced state was the question of content filtering. The interactive book application has been designed so that the reader's age is specified as one of the parameters driving all content creation efforts. However, implementing safeguards for such content, especially when children are involved, is a paramount concern.
 	
 	For this reason, a simple but effective content-checking solution has been implemented in the \textbf{\texttt{OpenAIStoryWriter}} class using the \textbf{\texttt{profanityfilter library}}. \textbf{\texttt{Profanityfilter}} is an open-source Python library that detects and obfuscates profanity from the text and replaces such text with \textbf{\texttt{***}}.
 	
@@ -375,7 +380,7 @@
 		& \\ \hline
 		
 		& \\
-		\textbf{\texttt{prompt\_story\_title}} & Give me only the title of the story. \\
+		\textbf{\texttt{prompt\_story\_title}} & Give me only the title of the story.  (Note that this prompt will immediately follow the previous promt)\\
 		& \\ \hline
 		
 		& \\
