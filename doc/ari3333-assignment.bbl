@@ -1,0 +1,339 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{brooker2021filling}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=532d1ae155dd4188bd7a2f524377c437}{%
+           family={Brooker},
+           familyi={B\bibinitperiod},
+           given={Will},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{fullhash}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{fullhashraw}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{bibnamehash}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{authorbibnamehash}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{authornamehash}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{authorfullhash}{532d1ae155dd4188bd7a2f524377c437}
+      \strng{authorfullhashraw}{532d1ae155dd4188bd7a2f524377c437}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Participations: Journal of Audience and Reception Studies}
+      \field{number}{2}
+      \field{title}{Filling in the gaps: Creative imagination and nostalgia in ZX Spectrum Gaming}
+      \field{volume}{18}
+      \field{year}{2021}
+      \field{pages}{3\bibrangedash 43}
+      \range{pages}{41}
+    \endentry
+    \entry{delello2023exploring}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=f8d9daa68a80ff086d9a27a6977e809f}{%
+           family={Delello},
+           familyi={D\bibinitperiod},
+           given={Julie\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=b6bbe2cf4bcf99c49ab00f3826f9eeb0}{%
+           family={Sung},
+           familyi={S\bibinitperiod},
+           given={Woonhee},
+           giveni={W\bibinitperiod}}}%
+        {{hash=6937c03d43fb83c56c7e1b2a48ae99be}{%
+           family={Mokhtari},
+           familyi={M\bibinitperiod},
+           given={Kouider},
+           giveni={K\bibinitperiod}}}%
+        {{hash=63111c36d1d3bd267ffd986199bcccf6}{%
+           family={De\bibnamedelima Giuseppe},
+           familyi={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Tonia},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{ccd1009165d81e36151eada8e18c791e}
+      \strng{fullhash}{e5aaff7acb1c7040200006e0d2ed5c13}
+      \strng{fullhashraw}{e5aaff7acb1c7040200006e0d2ed5c13}
+      \strng{bibnamehash}{ccd1009165d81e36151eada8e18c791e}
+      \strng{authorbibnamehash}{ccd1009165d81e36151eada8e18c791e}
+      \strng{authornamehash}{ccd1009165d81e36151eada8e18c791e}
+      \strng{authorfullhash}{e5aaff7acb1c7040200006e0d2ed5c13}
+      \strng{authorfullhashraw}{e5aaff7acb1c7040200006e0d2ed5c13}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Inclusive Methodology and Technology in Learning and Teaching}
+      \field{number}{4}
+      \field{title}{Exploring College Students' Awareness of AI and ChatGPT: Unveiling Perceived Benefits and Risks}
+      \field{volume}{3}
+      \field{year}{2023}
+    \endentry
+    \entry{demonfromdarkside2024}{misc}{}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://worldofspectrum.org/archive/software/text-adventures/demon-from-the-darkside-compass-software}}
+      \field{note}{Accessed: December 25, 2024}
+      \field{title}{Demon from the Darkside - Compass Software}
+    \endentry
+    \entry{fotedar2020storytelling}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=7d073a82c36b42d14f73a474480d7e3d}{%
+           family={Fotedar},
+           familyi={F\bibinitperiod},
+           given={Sonali},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2cec77fa54483b0863d2e473e6d4083a}{%
+           family={Vannisselroij},
+           familyi={V\bibinitperiod},
+           given={Koen},
+           giveni={K\bibinitperiod}}}%
+        {{hash=58f0cd0f7b54c15a2d5b526202b32971}{%
+           family={Khalil},
+           familyi={K\bibinitperiod},
+           given={Shama},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b11e0ac65d95990c17093366a18682cd}{%
+           family={Ploeg},
+           familyi={P\bibinitperiod},
+           given={Bas},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{caedab4d73cf63ba34eb97c60fb54ddb}
+      \strng{fullhash}{5aeb9cb5e3a6448103c91fcc90e1717b}
+      \strng{fullhashraw}{5aeb9cb5e3a6448103c91fcc90e1717b}
+      \strng{bibnamehash}{caedab4d73cf63ba34eb97c60fb54ddb}
+      \strng{authorbibnamehash}{caedab4d73cf63ba34eb97c60fb54ddb}
+      \strng{authornamehash}{caedab4d73cf63ba34eb97c60fb54ddb}
+      \strng{authorfullhash}{5aeb9cb5e3a6448103c91fcc90e1717b}
+      \strng{authorfullhashraw}{5aeb9cb5e3a6448103c91fcc90e1717b}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{AI4Narratives@ IJCAI}
+      \field{title}{Storytelling AI: A Generative Approach to Story Narration.}
+      \field{year}{2020}
+      \field{pages}{19\bibrangedash 22}
+      \range{pages}{4}
+    \endentry
+    \entry{kur2019european}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=e70374ae3dc0091b937928e20be7d609}{%
+           family={Kur},
+           familyi={K\bibinitperiod},
+           given={Annette},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a1c8efcb56d031d542ff84948c4c0965}{%
+           family={Dreier},
+           familyi={D\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=32c9429158075ec796903dba81cc0840}{%
+           family={Luginbuehl},
+           familyi={L\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Edward Elgar Publishing}%
+      }
+      \strng{namehash}{2c249a4e6fb23efa08016f993ca75a3e}
+      \strng{fullhash}{2c249a4e6fb23efa08016f993ca75a3e}
+      \strng{fullhashraw}{2c249a4e6fb23efa08016f993ca75a3e}
+      \strng{bibnamehash}{2c249a4e6fb23efa08016f993ca75a3e}
+      \strng{authorbibnamehash}{2c249a4e6fb23efa08016f993ca75a3e}
+      \strng{authornamehash}{2c249a4e6fb23efa08016f993ca75a3e}
+      \strng{authorfullhash}{2c249a4e6fb23efa08016f993ca75a3e}
+      \strng{authorfullhashraw}{2c249a4e6fb23efa08016f993ca75a3e}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{European intellectual property law: text, cases and materials}
+      \field{year}{2019}
+    \endentry
+    \entry{kutty2021personalization}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=fec832c66bf15d6f873c60fdcaaea547}{%
+           family={Kutty},
+           familyi={K\bibinitperiod},
+           given={Reshma\bibnamedelima Narayanan},
+           giveni={R\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=24ad9ab5ff6f1a029981959eb5281139}{%
+           family={Orellana-Rodriguez},
+           familyi={O\bibinithyphendelim R\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4ae3e1ef050e692436e990fa384726e7}{%
+           family={Brigadir},
+           familyi={B\bibinitperiod},
+           given={Igor},
+           giveni={I\bibinitperiod}}}%
+        {{hash=35ccd5efc0bfd0c540df416823c85fef}{%
+           family={Diaz-Aviles},
+           familyi={D\bibinithyphendelim A\bibinitperiod},
+           given={Ernesto},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{bac56989943219b9e590028e74322624}
+      \strng{fullhash}{c5800ee124a9e80237d373c6d3f4c7f0}
+      \strng{fullhashraw}{c5800ee124a9e80237d373c6d3f4c7f0}
+      \strng{bibnamehash}{bac56989943219b9e590028e74322624}
+      \strng{authorbibnamehash}{bac56989943219b9e590028e74322624}
+      \strng{authornamehash}{bac56989943219b9e590028e74322624}
+      \strng{authorfullhash}{c5800ee124a9e80237d373c6d3f4c7f0}
+      \strng{authorfullhashraw}{c5800ee124a9e80237d373c6d3f4c7f0}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2109.06990}
+      \field{title}{Personalization, privacy, and me}
+      \field{year}{2021}
+    \endentry
+    \entry{salazar2024generative}{incollection}{}{}
+      \name{author}{3}{}{%
+        {{hash=abf71ba5315c7065f5f6da033e464557}{%
+           family={Salazar},
+           familyi={S\bibinitperiod},
+           given={Leslie\bibnamedelima Ramos},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=55f7c945c3e6ebe818b8c4f7202b1596}{%
+           family={Peeples},
+           familyi={P\bibinitperiod},
+           given={Shanna\bibnamedelima F},
+           giveni={S\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=75a9b54b383d69e87467f906802b50d3}{%
+           family={Brooks},
+           familyi={B\bibinitperiod},
+           given={Mary\bibnamedelima E},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IGI Global}%
+      }
+      \strng{namehash}{efad3d697e3fdce9f4054f1214013623}
+      \strng{fullhash}{efad3d697e3fdce9f4054f1214013623}
+      \strng{fullhashraw}{efad3d697e3fdce9f4054f1214013623}
+      \strng{bibnamehash}{efad3d697e3fdce9f4054f1214013623}
+      \strng{authorbibnamehash}{efad3d697e3fdce9f4054f1214013623}
+      \strng{authornamehash}{efad3d697e3fdce9f4054f1214013623}
+      \strng{authorfullhash}{efad3d697e3fdce9f4054f1214013623}
+      \strng{authorfullhashraw}{efad3d697e3fdce9f4054f1214013623}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Role of Generative AI in the Communication Classroom}
+      \field{title}{Generative AI Ethical Considerations and Discriminatory Biases on Diverse Students Within the Classroom}
+      \field{year}{2024}
+      \field{pages}{191\bibrangedash 213}
+      \range{pages}{23}
+    \endentry
+    \entry{udhayakumarexploring}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=a24f88a327443c251fda030a6d2e7c2e}{%
+           family={Udhayakumar},
+           familyi={U\bibinitperiod},
+           given={R},
+           giveni={R\bibinitperiod}}}%
+        {{hash=27a7e01d24fcac06c3a9fc6a71182eb3}{%
+           family={Lakshmi},
+           familyi={L\bibinitperiod},
+           given={K\bibnamedelima Srividya},
+           giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{3218693d45f4af5f8af65df443cdfd5e}
+      \strng{fullhash}{3218693d45f4af5f8af65df443cdfd5e}
+      \strng{fullhashraw}{3218693d45f4af5f8af65df443cdfd5e}
+      \strng{bibnamehash}{3218693d45f4af5f8af65df443cdfd5e}
+      \strng{authorbibnamehash}{3218693d45f4af5f8af65df443cdfd5e}
+      \strng{authornamehash}{3218693d45f4af5f8af65df443cdfd5e}
+      \strng{authorfullhash}{3218693d45f4af5f8af65df443cdfd5e}
+      \strng{authorfullhashraw}{3218693d45f4af5f8af65df443cdfd5e}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{EXPLORING THE IMPACT OF AI-GENERATED NARRATIVES ON THE EVOLUTION OF DIGITAL LITERATURE IN THE ENGLISH LANGUAGE}
+    \endentry
+    \entry{vidrih2023generative}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f130526625e89b965d77488079377ff3}{%
+           family={Vidrih},
+           familyi={V\bibinitperiod},
+           given={Marko},
+           giveni={M\bibinitperiod}}}%
+        {{hash=47d3ac4695913f5100f7273cb4724f21}{%
+           family={Mayahi},
+           familyi={M\bibinitperiod},
+           given={Shiva},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{fullhash}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{fullhashraw}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{bibnamehash}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{authorbibnamehash}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{authornamehash}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{authorfullhash}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \strng{authorfullhashraw}{ecd85ceab947fc30b0d0c21b904c17f7}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2309.09048}
+      \field{title}{Generative AI-Driven Storytelling: A New Era for Marketing}
+      \field{year}{2023}
+    \endentry
+    \entry{woodcock2012zx}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=f21b6c0b585acc0d97f5dfb29b91f7c3}{%
+           family={Woodcock},
+           familyi={W\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Lulu. com}%
+      }
+      \strng{namehash}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{fullhash}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{fullhashraw}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{bibnamehash}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{authorbibnamehash}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{authornamehash}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{authorfullhash}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \strng{authorfullhashraw}{f21b6c0b585acc0d97f5dfb29b91f7c3}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The ZX Spectrum on Your PC}
+      \field{year}{2012}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
